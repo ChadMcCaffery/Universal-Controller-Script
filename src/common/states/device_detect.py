@@ -13,16 +13,17 @@ more details.
 
 import time
 from typing import Optional
+
 import device
+from fl_classes import FlMidiMsg, isMidiMsgSysex
 
 import common
-from consts import UNIVERSAL_DEVICE_ENQUIRY
-from common.exceptions import DeviceRecognizeError
 from common import log, verbosity
-from fl_classes import isMidiMsgSysex, FlMidiMsg
+from common.exceptions import DeviceRecognizeError
 from common.util.events import eventToString
+from consts import UNIVERSAL_DEVICE_ENQUIRY
 
-from . import IScriptState, ErrorState, DeviceState
+from . import DeviceState, ErrorState, IScriptState
 
 LOG_CAT = "bootstrap.device.type_detect"
 

@@ -17,10 +17,11 @@ __all__ = [
     'credits'
 ]
 
+from typing import Callable
+
 import consts
 
-from typing import Callable
-from .misc import _NoneNoPrintout, NoneNoPrintout
+from .misc import NoneNoPrintout, _NoneNoPrintout
 
 
 def printReturn(func: Callable) -> Callable:

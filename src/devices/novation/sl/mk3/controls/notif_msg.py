@@ -9,9 +9,10 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
-from control_surfaces import NotifMsg
 from fl_classes import FlMidiMsg
+
 from common.util.events import forwardEvent
+from control_surfaces import NotifMsg
 
 LINE_LEN = 18
 

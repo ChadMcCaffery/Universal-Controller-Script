@@ -11,6 +11,7 @@ more details.
 """
 # import pytest
 from fl_classes import FlMidiMsg
+
 from common.util.events import encodeForwardedEvent
 from control_surfaces.matchers import IndexedMatcher
 from tests.helpers.controls import SimpleControl, SimpleForwardedControl

@@ -4,7 +4,9 @@ common > util > catch_exception_decorator
 Contains `catchExceptionDecorator` which can be used
 """
 from typing import Callable, Optional, TypeVar
+
 from typing_extensions import ParamSpec
+
 # from functools import wraps
 
 

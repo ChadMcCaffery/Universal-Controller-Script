@@ -15,7 +15,6 @@ more details.
 from common.types import Color
 from integrations.plugin import basicPluginBuilder
 
-
 # Serum
 basicPluginBuilder(
     ('Serum',),

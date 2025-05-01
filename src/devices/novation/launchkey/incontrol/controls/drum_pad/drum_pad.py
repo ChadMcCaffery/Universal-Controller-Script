@@ -11,21 +11,23 @@ more details.
 """
 
 from typing import TYPE_CHECKING, Optional
-from control_surfaces.event_patterns import ForwardedPattern,  NotePattern
+
 from common.types import Color
-from control_surfaces.value_strategies import NoteStrategy, ForwardedStrategy
 from control_surfaces import (
+    ActivitySwitcher,
     ControlSurface,
     DrumPad,
     MuteButton,
     SoloButton,
-    ActivitySwitcher,
 )
-from .. import ColorInControlSurface
-from ...consts import DRUM_ROWS, DRUM_COLS
+from control_surfaces.event_patterns import ForwardedPattern, NotePattern
 from control_surfaces.matchers import (
     BasicControlMatcher,
 )
+from control_surfaces.value_strategies import ForwardedStrategy, NoteStrategy
+
+from ...consts import DRUM_COLS, DRUM_ROWS
+from .. import ColorInControlSurface
 
 
 class ILkDrumPad(ControlSurface):  # pragma: no cover

@@ -11,54 +11,55 @@ more details.
 """
 
 from typing import Optional
+
 import device
+from fl_classes import FlMidiMsg
 
 from common import getContext
+from common.extension_manager import ExtensionManager
+from control_surfaces import (
+    ArmButton,
+    ChannelAfterTouch,
+    ControlSwitchButton,
+    DrumPad,
+    Fader,
+    FastForwardButton,
+    GenericFaderButton,
+    Knob,
+    LoopButton,
+    MasterFader,
+    MetronomeButton,
+    MuteButton,
+    NullControl,
+    PlayButton,
+    RecordButton,
+    RewindButton,
+    SelectButton,
+    SoloButton,
+    StandardModWheel,
+    StopButton,
+    SwitchActivePluginButton,
+    SwitchActiveWindowButton,
+)
 from control_surfaces.event_patterns import (
     BasicPattern,
     ForwardedPattern,
     ForwardedUnionPattern,
     NotePattern,
 )
-from common.extension_manager import ExtensionManager
-from fl_classes import FlMidiMsg
-from devices import Device
 from control_surfaces.matchers import (
     BasicControlMatcher,
     NoteMatcher,
     PedalMatcher,
 )
-from control_surfaces import (
-    NullControl,
-    Fader,
-    MasterFader,
-    Knob,
-    DrumPad,
-    PlayButton,
-    StopButton,
-    RecordButton,
-    FastForwardButton,
-    RewindButton,
-    LoopButton,
-    MetronomeButton,
-    StandardModWheel,
-    ChannelAfterTouch,
-    SwitchActivePluginButton,
-    SwitchActiveWindowButton,
-    GenericFaderButton,
-    MuteButton,
-    SoloButton,
-    ArmButton,
-    SelectButton,
-    ControlSwitchButton,
-)
 from control_surfaces.value_strategies import (
-    ForwardedStrategy,
-    ForwardedUnionStrategy,
     ButtonData2Strategy,
     Data2Strategy,
+    ForwardedStrategy,
+    ForwardedUnionStrategy,
     NoteStrategy,
 )
+from devices import Device
 
 from .hammer_pitch import HammerPitchWheel
 from .jog_matcher import JogMatcher

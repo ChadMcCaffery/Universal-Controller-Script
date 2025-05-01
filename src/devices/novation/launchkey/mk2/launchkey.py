@@ -11,38 +11,38 @@ more details.
 """
 
 from typing import Optional
-import device
 
-from control_surfaces.event_patterns import BasicPattern
-from common.extension_manager import ExtensionManager
+import device
 from fl_classes import FlMidiMsg
+
+from common.extension_manager import ExtensionManager
 from control_surfaces import (
     StandardModWheel,
     StandardPitchWheel,
     SustainPedal,
 )
-from devices import Device
+from control_surfaces.event_patterns import BasicPattern
 from control_surfaces.matchers import BasicControlMatcher, NoteMatcher
-
+from devices import Device
 from devices.novation.launchkey.incontrol import (
     InControl,
     InControlMatcher,
 )
 from devices.novation.launchkey.incontrol.controls import (
-    LkMk2DrumPad,
     LkDrumPadMatcher,
-    LkMk2ControlSwitchButton,
-    LkMk2MetronomeButton,
+    LkFastForwardButton,
     LkKnobSet,
-    LkMk2StopButton,
-    LkMk2PlayButton,
+    LkMk2ControlSwitchButton,
     LkMk2DirectionNext,
     LkMk2DirectionPrevious,
-    LkFastForwardButton,
-    LkRewindButton,
-    LkMk2RecordButton,
-    LkMk2LoopButton,
+    LkMk2DrumPad,
     LkMk2FaderSet,
+    LkMk2LoopButton,
+    LkMk2MetronomeButton,
+    LkMk2PlayButton,
+    LkMk2RecordButton,
+    LkMk2StopButton,
+    LkRewindButton,
 )
 
 ID_PREFIX = "Novation.Launchkey.Mk2"
@@ -122,10 +122,7 @@ class LaunchkeyMk2_49_61(LaunchkeyMk2):
         return cls()
 
     def getId(self) -> str:
-        if "49" in device.getName():
-            num = 49
-        else:
-            num = 61
+        num = 49 if "49" in device.getName() else 61
         return f"{ID_PREFIX}.{num}"
 
     @classmethod

@@ -9,7 +9,8 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
-from typing import TypeVar, Generator
+from collections.abc import Generator
+from typing import TypeVar
 
 T = TypeVar("T")
 

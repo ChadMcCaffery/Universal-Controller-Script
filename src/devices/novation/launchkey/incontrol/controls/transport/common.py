@@ -10,13 +10,13 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
-from control_surfaces.event_patterns import BasicPattern, ForwardedPattern
 from control_surfaces import (
     FastForwardButton,
-    RewindButton,
     QuantizeButton,
+    RewindButton,
     UndoRedoButton,
 )
+from control_surfaces.event_patterns import BasicPattern, ForwardedPattern
 from control_surfaces.value_strategies import (
     ButtonData2Strategy,
     ForwardedStrategy,

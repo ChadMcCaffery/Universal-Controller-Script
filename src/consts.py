@@ -72,10 +72,7 @@ def checkFlVersion() -> bool:
     if fl_minor > req_minor:
         return True
 
-    if fl_release < req_release:
-        return False
-
-    return True
+    return not fl_release < req_release
 
 
 # Website

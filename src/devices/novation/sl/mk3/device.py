@@ -11,49 +11,51 @@ more details.
 """
 
 from typing import Optional
-import device
 
-from control_surfaces.event_patterns import BasicPattern
-from common.extension_manager import ExtensionManager
+import device
 from fl_classes import FlMidiMsg
+
+from common.extension_manager import ExtensionManager
 from control_surfaces import (
+    ActivitySwitcher,
+    ChannelAfterTouch,
     StandardModWheel,
     StandardPitchWheel,
     SustainPedal,
-    ChannelAfterTouch,
-    ActivitySwitcher,
 )
-from devices import Device
+from control_surfaces.event_patterns import BasicPattern
 from control_surfaces.matchers import (
     BasicControlMatcher,
     NoteMatcher,
     ShiftMatcher,
     ShiftView,
 )
+from devices import Device
+
+from .controls import (
+    SlAmbientKeys,
+    SlDrumPadMatcher,
+    SlEncoderSet,
+    SlFaderSet,
+    SlMuteSet,
+    SlNotifMsg,
+    SlToolSelectorSet,
+)
 from .controls.transport import (
-    SlPlayButton,
-    SlStopButton,
-    SlLoopButton,
-    SlRecordButton,
-    SlDirectionRight,
-    SlDirectionLeft,
+    SlActivitySwitchButton,
+    SlControlSwitchButton,
     SlDirectionDown,
-    SlDirectionUp,
+    SlDirectionLeft,
     SlDirectionNext,
     SlDirectionPrevious,
-    SlRewindButton,
+    SlDirectionRight,
+    SlDirectionUp,
     SlFastForwardButton,
-    SlControlSwitchButton,
-    SlActivitySwitchButton,
-)
-from .controls import (
-    SlFaderSet,
-    SlEncoderSet,
-    SlToolSelectorSet,
-    SlMuteSet,
-    SlDrumPadMatcher,
-    SlNotifMsg,
-    SlAmbientKeys,
+    SlLoopButton,
+    SlPlayButton,
+    SlRecordButton,
+    SlRewindButton,
+    SlStopButton,
 )
 
 DEVICE_ID = "Novation.SL.Mk3"

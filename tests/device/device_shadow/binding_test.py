@@ -11,11 +11,12 @@ more details.
 """
 
 import pytest
+
 from common.plug_indexes import WindowIndex
 from control_surfaces import (
     ControlEvent,
-    PlayButton,
     Fader,
+    PlayButton,
 )
 from devices import DeviceShadow
 from tests.helpers.devices import DummyDeviceBasic

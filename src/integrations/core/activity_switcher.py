@@ -14,17 +14,21 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
-from common.extension_manager import ExtensionManager
+import contextlib
+
 from common import getContext
-from common.types import Color
+from common.extension_manager import ExtensionManager
 from common.plug_indexes import (
     FlIndex,
     PluginIndex,
 )
+from common.types import Color
 from control_surfaces import (
     ActivitySwitcher as ActivitySwitchControl,
-    ControlShadowEvent,
+)
+from control_surfaces import (
     ControlShadow,
+    ControlShadowEvent,
 )
 from devices import DeviceShadow
 from integrations import CoreIntegration
@@ -78,10 +82,8 @@ class ActivitySwitcher(CoreIntegration):
         _,
         c_index: int,
     ) -> bool:
-        try:
+        with contextlib.suppress(IndexError):
             getContext().activity.getHistoryActivity(c_index).focus()
-        except IndexError:
-            pass
         return True
 
     def tActivity(

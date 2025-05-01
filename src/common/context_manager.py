@@ -12,32 +12,31 @@ more details.
 """
 
 __all__ = [
-    'catchContextResetException',
-    'getContext',
-    'resetContext',
-    'unsafeResetContext'
+    "catchContextResetException",
+    "getContext",
+    "resetContext",
+    "unsafeResetContext",
 ]
 
-from .profiler import profilerDecoration
-from . import logger
-from typing import NoReturn, Optional, Callable, TYPE_CHECKING
 from time import time_ns
+from typing import TYPE_CHECKING, Callable, NoReturn, Optional
+
 from fl_classes import FlMidiMsg
 
-from .settings import Settings
+from . import logger
 from .activity_state import ActivityState
 from .exceptions import UcsError
-from .util.api_fixes import catchUnsafeOperation
-from .util.misc import NoneNoPrintout
-from .util.events import isEventForwarded, isEventForwardedHere
-from .util.catch_exception_decorator import catchExceptionDecorator
-from .profiler import ProfilerManager
-
+from .profiler import ProfilerManager, profilerDecoration
+from .settings import Settings
 from .states import (
-    IScriptState,
     ErrorState,
+    IScriptState,
     StateChangeException,
 )
+from .util.api_fixes import catchUnsafeOperation
+from .util.catch_exception_decorator import catchExceptionDecorator
+from .util.events import isEventForwarded, isEventForwardedHere
+from .util.misc import NoneNoPrintout
 
 if TYPE_CHECKING:
     from devices import Device
@@ -73,7 +72,7 @@ class DeviceContextManager:
         self._ticks = 0
         self._dropped_ticks = 0
         self._slow_ticks = 0
-        self._device: Optional['Device'] = None
+        self._device: Optional[Device] = None
 
     def enableProfiler(self, trace: bool = False) -> None:
         """
@@ -103,7 +102,8 @@ class DeviceContextManager:
     @catchExceptionDecorator(UcsError, toErrorState)
     @profilerDecoration("deinitialize")
     def deinitialize(self) -> None:
-        """Deinitialize the controller when FL Studio closes or begins a render
+        """
+        Deinitialize the controller when FL Studio closes or begins a render
         """
         if self._device is not None:
             self._device.deinitialize()
@@ -123,11 +123,11 @@ class DeviceContextManager:
         * `event` (`event`): event to process
         """
         # Filter out events that shouldn't be forwarded here
-        if isEventForwarded(event):
-            # If device is none, ignore all forwarded messages
-            if self._device is None or not isEventForwardedHere(event):
-                event.handled = True
-                return
+        if isEventForwarded(event) and (
+            self._device is None or not isEventForwardedHere(event)
+        ):
+            event.handled = True
+            return
         if self.state is None:
             raise MissingContextException("State not set")
         self.state.processEvent(event)
@@ -213,7 +213,7 @@ class DeviceContextManager:
         new_state.initialize()
         raise StateChangeException("State changed")
 
-    def registerDevice(self, dev: 'Device'):
+    def registerDevice(self, dev: "Device"):
         """
         Register a recognized device
 
@@ -222,7 +222,7 @@ class DeviceContextManager:
         """
         self._device = dev
 
-    def getDevice(self) -> 'Device':
+    def getDevice(self) -> "Device":
         """
         Return a reference to the recognized device
 
@@ -250,7 +250,7 @@ class DeviceContextManager:
         if self._device is not None:
             return self._device.getId()
         else:
-            return 'Device not recognized'
+            return "Device not recognized"
 
 
 class ContextResetException(Exception):
@@ -276,6 +276,7 @@ def catchContextResetException(func: Callable) -> Callable:
     ### Returns:
     * `Callable`: decorated function
     """
+
     def wrapper(*args, **kwargs):
         try:
             ret = func(*args, **kwargs)
@@ -283,6 +284,7 @@ def catchContextResetException(func: Callable) -> Callable:
                 return NoneNoPrintout
         except ContextResetException:
             return NoneNoPrintout
+
     return wrapper
 
 
@@ -322,7 +324,8 @@ def resetContext(reason: str = "none") -> NoReturn:
     logger.log(
         "bootstrap.context.reset",
         f"Device context reset with reason: {reason}",
-        logger.verbosity.WARNING)
+        logger.verbosity.WARNING,
+    )
     _context = DeviceContextManager()
     raise ContextResetException(reason)
 

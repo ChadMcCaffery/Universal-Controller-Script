@@ -10,8 +10,8 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
-from . import ControlSurface, NavigationControl
 from .. import consts
+from . import ControlSurface, NavigationControl
 
 
 class JogWheel(NavigationControl):

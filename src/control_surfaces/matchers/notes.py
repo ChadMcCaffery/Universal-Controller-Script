@@ -11,14 +11,16 @@ more details.
 """
 
 from typing import Optional
-from control_surfaces.event_patterns import (
-    BasicPattern,
-    fromNibbles,
-    ByteMatch,
-)
+
 from fl_classes import FlMidiMsg, isMidiMsgStandard
+
 from control_surfaces import ControlSurface, Note, NoteAfterTouch
 from control_surfaces.control_mapping import ControlEvent
+from control_surfaces.event_patterns import (
+    BasicPattern,
+    ByteMatch,
+    fromNibbles,
+)
 from control_surfaces.matchers import IControlMatcher
 
 

@@ -13,8 +13,10 @@ more details.
 # Add the source directory to the PATH variable so the project doesn't break
 # when we import things
 import sys
+
 sys.path.append('./src')
 
 # Make sure that we don't break things due to circular imports
 import common  # noqa: E402
+
 del common

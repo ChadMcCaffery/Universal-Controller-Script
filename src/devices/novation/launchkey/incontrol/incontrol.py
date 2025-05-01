@@ -10,11 +10,13 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from typing import Optional
-from control_surfaces import ControlSurface, ControlEvent, NullControl
-from control_surfaces.matchers import IControlMatcher
-from control_surfaces.event_patterns import BasicPattern, ForwardedPattern
+
 from fl_classes import FlMidiMsg
+
 from common.util.events import forwardEvent
+from control_surfaces import ControlEvent, ControlSurface, NullControl
+from control_surfaces.event_patterns import BasicPattern, ForwardedPattern
+from control_surfaces.matchers import IControlMatcher
 
 from .controls.drum_pad import LkDrumPad
 

@@ -12,4 +12,4 @@ more details.
 
 __all__ = ['mpk_mini_plus']
 
-from . import (mpk_mini_plus)
+from . import mpk_mini_plus

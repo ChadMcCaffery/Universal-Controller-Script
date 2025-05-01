@@ -11,14 +11,16 @@ more details.
 """
 
 from typing import TYPE_CHECKING
-import common
+
 import device
 from fl_classes import FlMidiMsg, isMidiMsgStandard, isMidiMsgSysex
+
+import common
 from common.exceptions import (
-    EventEncodeError,
-    EventInspectError,
     EventDecodeError,
     EventDispatchError,
+    EventEncodeError,
+    EventInspectError,
 )
 
 
@@ -58,11 +60,10 @@ def isEventForwarded(event: FlMidiMsg) -> bool:
     """
     # Check if the event is a forwarded one
     # Look for 0xF0 and 0x7D
-    if not isMidiMsgSysex(event) \
-            or not event.sysex.startswith(bytes([0xF0, 0x7D])):
-        return False
-    else:
-        return True
+    return not (
+        not isMidiMsgSysex(event)
+        or not event.sysex.startswith(bytes([240, 125]))
+    )
 
 
 def getForwardedEventHeader() -> bytes:
@@ -72,11 +73,16 @@ def getForwardedEventHeader() -> bytes:
     ### Returns:
     * `bytes`: event header
     """
-    return bytes([
-        0xF0,  # Start sysex
-        0x7D  # Non-commercial sysex ID
-    ]) + getDeviceId().encode() \
-       + bytes([0])
+    return (
+        bytes(
+            [
+                0xF0,  # Start sysex
+                0x7D,  # Non-commercial sysex ID
+            ]
+        )
+        + getDeviceId().encode()
+        + bytes([0])
+    )
 
 
 def encodeForwardedEvent(event: FlMidiMsg, device_num: int = -1) -> bytes:
@@ -108,12 +114,11 @@ def encodeForwardedEvent(event: FlMidiMsg, device_num: int = -1) -> bytes:
     sysex = getForwardedEventHeader() + bytes([device_num])
 
     if isMidiMsgStandard(event):
-        return sysex + bytes([0]) + bytes([
-            event.data2,
-            event.data1,
-            event.status,
-            0xF7
-        ])
+        return (
+            sysex
+            + bytes([0])
+            + bytes([event.data2, event.data1, event.status, 0xF7])
+        )
     else:
         if TYPE_CHECKING:  # TODO: Find a way to make this unnecessary
             assert isMidiMsgSysex(event)
@@ -131,7 +136,7 @@ def _getForwardedNameEndIdx(event: FlMidiMsg) -> int:
     * `int`: index of null zero
     """
     assert isMidiMsgSysex(event)
-    return event.sysex.index(b'\0')
+    return event.sysex.index(b"\0")
 
 
 def getEventForwardedTo(event: FlMidiMsg) -> str:
@@ -145,7 +150,7 @@ def getEventForwardedTo(event: FlMidiMsg) -> str:
     * `str`: device name
     """
     assert isMidiMsgSysex(event)
-    return event.sysex[2:_getForwardedNameEndIdx(event)].decode()
+    return event.sysex[2 : _getForwardedNameEndIdx(event)].decode()
 
 
 def isEventForwardedHere(event: FlMidiMsg) -> bool:
@@ -162,12 +167,7 @@ def isEventForwardedHere(event: FlMidiMsg) -> bool:
     if not isEventForwarded(event):
         return False
 
-    if (
-        getEventForwardedTo(event)
-        != getDeviceId()
-    ):
-        return False
-    return True
+    return getEventForwardedTo(event) == getDeviceId()
 
 
 def getEventDeviceNum(event: FlMidiMsg) -> int:
@@ -208,10 +208,7 @@ def isEventForwardedHereFrom(event: FlMidiMsg, device_num: int = -1) -> bool:
     if not isEventForwardedHere(event):
         return False
 
-    if device_num != getEventDeviceNum(event):
-        return False
-
-    return True
+    return device_num == getEventDeviceNum(event)
 
 
 def decodeForwardedEvent(event: FlMidiMsg, type_idx: int = -1) -> FlMidiMsg:
@@ -237,13 +234,13 @@ def decodeForwardedEvent(event: FlMidiMsg, type_idx: int = -1) -> FlMidiMsg:
 
     if event.sysex[type_idx]:
         # Remaining bytes are sysex data
-        return FlMidiMsg(list(event.sysex[type_idx + 1:]))
+        return FlMidiMsg(list(event.sysex[type_idx + 1 :]))
     else:
         # Extract (data2, data1, status)
         return FlMidiMsg(
             event.sysex[type_idx + 3],
             event.sysex[type_idx + 2],
-            event.sysex[type_idx + 1]
+            event.sysex[type_idx + 1],
         )
 
 
@@ -272,7 +269,7 @@ def forwardEvent(event: FlMidiMsg, device_num: int = -1):
         device.dispatch(i, 0xF0, output)
 
 
-def eventToRawData(event: FlMidiMsg) -> 'int | bytes':
+def eventToRawData(event: FlMidiMsg) -> "int | bytes":
     """
     Convert event to raw data.
 

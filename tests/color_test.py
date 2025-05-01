@@ -11,9 +11,10 @@ more details.
 """
 
 import pytest
+
 from common.types import Color
 
-from .helpers import floatApproxEqRatio, combinations
+from .helpers import combinations, floatApproxEqRatio
 
 
 def test_basic():

@@ -20,9 +20,11 @@ __all__ = [
     'transport',
 ]
 
-from . import activity_switcher
-from . import fallback_transport
-from . import macro
-from . import manual_mapper
-from . import pressed
-from . import transport
+from . import (
+    activity_switcher,
+    fallback_transport,
+    macro,
+    manual_mapper,
+    pressed,
+    transport,
+)

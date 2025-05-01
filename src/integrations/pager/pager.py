@@ -8,8 +8,9 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from typing import Any
-from common.types import Color
+
 from common.plug_indexes.fl_index import FlIndex
+from common.types import Color
 from control_surfaces import ControlEvent, ControlSwitchButton
 from control_surfaces.control_mapping import ControlShadowEvent
 from devices import DeviceShadow

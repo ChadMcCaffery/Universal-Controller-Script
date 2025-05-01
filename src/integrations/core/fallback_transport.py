@@ -19,8 +19,8 @@ from integrations.mapping_strategies import (
     DirectionStrategy,
     JogStrategy,
     NoteStrategy,
-    WheelStrategy,
     PedalStrategy,
+    WheelStrategy,
 )
 
 

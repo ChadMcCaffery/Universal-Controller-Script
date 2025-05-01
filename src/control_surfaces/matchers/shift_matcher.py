@@ -11,9 +11,12 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from typing import Optional
+
 from fl_classes import FlMidiMsg
+
 from common.types import Color
 from control_surfaces import ControlEvent, ControlSurface, NullControl
+
 from ..event_patterns import TruePattern
 from . import IControlMatcher
 

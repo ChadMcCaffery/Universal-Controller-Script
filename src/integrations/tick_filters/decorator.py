@@ -10,7 +10,9 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from typing import Callable
+
 from typing_extensions import TypeAlias
+
 from common.plug_indexes.fl_index import FlIndex
 
 TickCallback: TypeAlias = Callable[[FlIndex], bool]

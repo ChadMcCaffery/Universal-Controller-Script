@@ -9,12 +9,12 @@ more details.
 """
 from common.plug_indexes import PluginIndex
 from control_surfaces import (
+    ControlShadowEvent,
     DirectionNext,
     DirectionPrevious,
-    ControlShadowEvent,
 )
 from devices import DeviceShadow
-from integrations.event_filters import toPluginIndex, filterButtonLift
+from integrations.event_filters import filterButtonLift, toPluginIndex
 
 
 class PresetNavigationStrategy:

@@ -11,22 +11,23 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
-from typing import Any
 from time import time
-from common.types import Color
+from typing import Any
+
 from common.extension_manager import ExtensionManager
+from common.types import Color
 from control_surfaces import (
-    DrumPad,
     Button,
-    Note,
-    Knob,
-    Fader,
-    Encoder,
-    ModWheel,
-    PitchWheel,
+    ControlShadow,
     ControlSurface,
+    DrumPad,
+    Encoder,
+    Fader,
+    Knob,
+    ModWheel,
+    Note,
+    PitchWheel,
 )
-from control_surfaces import ControlShadow
 from devices import DeviceShadow
 from integrations import CoreIntegration
 

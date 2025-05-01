@@ -11,12 +11,12 @@ more details.
 """
 from control_surfaces import ControlSurface, DrumPad
 from control_surfaces.event_patterns import ForwardedPattern, NotePattern
-from control_surfaces.value_strategies import NoteStrategy, ForwardedStrategy
-from . import SlColorSurface
 from control_surfaces.matchers import (
     BasicControlMatcher,
 )
+from control_surfaces.value_strategies import ForwardedStrategy, NoteStrategy
 
+from . import SlColorSurface
 
 DRUM_NOTES = [
     [i + 0x60 for i in range(8)],

@@ -10,9 +10,11 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
-import common
-from typing import TypeVar, Callable
+from typing import Callable, TypeVar
+
 from typing_extensions import ParamSpec
+
+import common
 
 
 class ProfilerContext:

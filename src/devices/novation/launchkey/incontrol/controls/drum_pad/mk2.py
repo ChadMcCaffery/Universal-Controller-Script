@@ -9,8 +9,8 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
-from .drum_pad import LkDrumPad
 from ...colors.mk2 import COLORS
+from .drum_pad import LkDrumPad
 
 DRUM_PADS = [
     [0x60, 0x61, 0x62, 0x63, 0x64, 0x65, 0x66, 0x67],  # Also 0x68

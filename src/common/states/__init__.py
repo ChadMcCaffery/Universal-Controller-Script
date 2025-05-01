@@ -20,12 +20,12 @@ __all__ = [
     'WaitingForDevice',
 ]
 
+from .dev_state import DeviceState
+from .device_detect import WaitingForDevice
+from .error_state import ErrorState
+from .forward_state import ForwardState
+from .main_state import MainState
 from .script_state import (
     IScriptState,
     StateChangeException,
 )
-from .dev_state import DeviceState
-from .main_state import MainState
-from .forward_state import ForwardState
-from .error_state import ErrorState
-from .device_detect import WaitingForDevice

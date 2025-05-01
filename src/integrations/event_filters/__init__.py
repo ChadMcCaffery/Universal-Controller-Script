@@ -20,8 +20,8 @@ __all__ = [
 
 from .filters import filterButtonLift
 from .index import (
-    toWindowIndex,
-    toPluginIndex,
-    toGeneratorIndex,
     toEffectIndex,
+    toGeneratorIndex,
+    toPluginIndex,
+    toWindowIndex,
 )

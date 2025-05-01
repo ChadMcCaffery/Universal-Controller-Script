@@ -21,9 +21,9 @@ __all__ = [
     'PedalMatcher',
 ]
 
-from .control_matcher import IControlMatcher
 from .basic_matcher import BasicControlMatcher
+from .control_matcher import IControlMatcher
 from .indexed_matcher import IndexedMatcher
-from .shift_matcher import ShiftMatcher, ShiftView
-from .notes import NoteMatcher, NoteAfterTouchMatcher
+from .notes import NoteAfterTouchMatcher, NoteMatcher
 from .pedals import PedalMatcher
+from .shift_matcher import ShiftMatcher, ShiftView

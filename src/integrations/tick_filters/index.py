@@ -10,12 +10,13 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from common.plug_indexes import (
-    FlIndex,
-    PluginIndex,
-    GeneratorIndex,
     EffectIndex,
+    FlIndex,
+    GeneratorIndex,
+    PluginIndex,
     WindowIndex,
 )
+
 from .decorator import do_filter
 
 

@@ -12,8 +12,7 @@ more details.
 
 from common.param import Param, PluginParameter
 from common.plug_indexes import PluginIndex
-from control_surfaces import ModX, ModY
-from control_surfaces import ControlShadow, ControlShadowEvent
+from control_surfaces import ControlShadow, ControlShadowEvent, ModX, ModY
 from devices.device_shadow import DeviceShadow
 from integrations.event_filters.index import toPluginIndex
 

@@ -12,7 +12,7 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
-{
+{  # noqa: B018
     (0xB0, 0x0F, 0x00-7): {  # data2 refers to fader button number
         (0xB0, 0x2F, 0x07): "arm",
         (0xB0, 0x2F, 0x01): "select",

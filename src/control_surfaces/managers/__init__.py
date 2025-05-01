@@ -19,6 +19,6 @@ __all__ = [
     'DummyValueManager',
 ]
 
-from .annotation_manager import IAnnotationManager, DummyAnnotationManager
-from .color_manager import IColorManager, DummyColorManager
-from .value_manager import IValueManager, DummyValueManager
+from .annotation_manager import DummyAnnotationManager, IAnnotationManager
+from .color_manager import DummyColorManager, IColorManager
+from .value_manager import DummyValueManager, IValueManager

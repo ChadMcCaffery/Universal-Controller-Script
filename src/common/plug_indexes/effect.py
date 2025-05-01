@@ -10,8 +10,10 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 import mixer
-from .plugin import PluginIndex
+
 from common.tracks import MixerTrack
+
+from .plugin import PluginIndex
 
 
 class EffectIndex(PluginIndex):

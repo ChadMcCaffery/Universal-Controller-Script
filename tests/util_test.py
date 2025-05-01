@@ -11,8 +11,8 @@ more details.
 """
 
 from common.util.dict_tools import (
+    expandDictShorthand,
     recursiveMergeDictionaries,
-    expandDictShorthand
 )
 from common.util.snap import snap
 

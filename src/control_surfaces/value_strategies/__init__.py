@@ -25,12 +25,12 @@ __all__ = [
     'AkaiJoystickFullStrategy',
 ]
 
-from .value_strategy import IValueStrategy
-from .note_strategy import NoteStrategy
-from .data_strategy import Data2Strategy, Data1Strategy
-from .twos_compliment_delta import TwosComplimentDeltaStrategy
+from .akai_joystick_full_strategy import AkaiJoystickFullStrategy
 from .button_data2_strategy import ButtonData2Strategy
 from .button_single_press_strategy import ButtonSinglePressStrategy
+from .data_strategy import Data1Strategy, Data2Strategy
 from .forwarded_strategy import ForwardedStrategy, ForwardedUnionStrategy
+from .note_strategy import NoteStrategy
 from .null_strategy import NullStrategy
-from .akai_joystick_full_strategy import AkaiJoystickFullStrategy
+from .twos_compliment_delta import TwosComplimentDeltaStrategy
+from .value_strategy import IValueStrategy

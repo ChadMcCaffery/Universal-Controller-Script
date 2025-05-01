@@ -9,10 +9,11 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
+from abc import abstractmethod
+
 import plugins
 
 from common.plug_indexes import PluginIndex
-from abc import abstractmethod
 
 
 class PluginParameter:

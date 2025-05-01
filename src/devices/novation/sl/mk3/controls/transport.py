@@ -10,27 +10,28 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
-from control_surfaces.event_patterns import BasicPattern, ForwardedPattern
 from control_surfaces import (
+    ControlSwitchButton,
+    DirectionDown,
+    DirectionLeft,
     DirectionNext,
     DirectionPrevious,
-    DirectionLeft,
     DirectionRight,
     DirectionUp,
-    DirectionDown,
     FastForwardButton,
     LoopButton,
+    NullControl,
     PlayButton,
     RecordButton,
     RewindButton,
     StopButton,
-    ControlSwitchButton,
-    NullControl,
 )
+from control_surfaces.event_patterns import BasicPattern, ForwardedPattern
 from control_surfaces.value_strategies import (
     ButtonData2Strategy,
     ForwardedStrategy,
 )
+
 from .sl_color_surface import SlColorSurface
 
 __all__ = [

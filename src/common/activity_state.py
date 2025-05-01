@@ -12,21 +12,23 @@ more details.
 """
 
 from typing import Optional
+
+import plugins
 import ui
-from common.profiler import profilerDecoration
+
 from common.plug_indexes import (
-    PluginIndex,
-    GeneratorIndex,
     EffectIndex,
-    WindowIndex,
     FlIndex,
+    GeneratorIndex,
+    PluginIndex,
+    WindowIndex,
 )
+from common.profiler import profilerDecoration
+from common.types.bool_s import BoolS
 from common.util.api_fixes import (
     getFocusedPluginIndex,
     getFocusedWindowIndex,
 )
-from common.types.bool_s import BoolS
-import plugins
 
 
 class ActivityState:
@@ -45,7 +47,7 @@ class ActivityState:
         self._effect: EffectIndex = EffectIndex(0, 0)
         self._plugin: PluginIndex = self._generator
         self._plugin_name = ""
-        self._plug_active = True if self._plugin is not None else False
+        self._plug_active = self._plugin is not None
         self._changed = False
         self._plug_unsafe = False
         self._history: list[FlIndex] = []

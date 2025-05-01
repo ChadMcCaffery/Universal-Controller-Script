@@ -7,15 +7,16 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
-from control_surfaces import PauseActiveButton, NullControl
+from control_surfaces import NullControl, PauseActiveButton
 from control_surfaces.event_patterns import BasicPattern, ForwardedPattern
 from control_surfaces.value_strategies import (
     Data2Strategy,
-    NullStrategy,
     ForwardedStrategy,
+    NullStrategy,
 )
-from . import ColorInControlSurface
+
 from ..colors.mk3 import COLORS
+from . import ColorInControlSurface
 
 
 class LkPauseActive(PauseActiveButton):

@@ -11,42 +11,42 @@ more details.
 """
 from typing import Optional
 
+from fl_classes import FlMidiMsg
+
+from common.extension_manager import ExtensionManager
+from control_surfaces import (
+    ChannelAfterTouch,
+    DirectionDown,
+    DirectionLeft,
+    DirectionRight,
+    DirectionUp,
+    DrumPad,
+    Encoder,
+    FastForwardButton,
+    PlayButton,
+    RecordButton,
+    RewindButton,
+    StandardModWheel,
+    StandardPitchWheel,
+    StopButton,
+)
 from control_surfaces.event_patterns import (
     BasicPattern,
     NotePattern,
     UnionPattern,
 )
-from control_surfaces.value_strategies import (
-    Data1Strategy,
-    Data2Strategy,
-    AkaiJoystickFullStrategy,
-    TwosComplimentDeltaStrategy,
-)
-from common.extension_manager import ExtensionManager
-from fl_classes import FlMidiMsg
-from control_surfaces import (
-    Encoder,
-    StandardPitchWheel,
-    StandardModWheel,
-    DrumPad,
-    PlayButton,
-    StopButton,
-    RecordButton,
-    FastForwardButton,
-    RewindButton,
-    ChannelAfterTouch,
-    DirectionLeft,
-    DirectionRight,
-    DirectionUp,
-    DirectionDown,
-)
-from devices import Device
 from control_surfaces.matchers import (
     BasicControlMatcher,
     NoteMatcher,
     PedalMatcher,
 )
-
+from control_surfaces.value_strategies import (
+    AkaiJoystickFullStrategy,
+    Data1Strategy,
+    Data2Strategy,
+    TwosComplimentDeltaStrategy,
+)
+from devices import Device
 
 PAD_NOTES = [
     48, 47, 45, 43,

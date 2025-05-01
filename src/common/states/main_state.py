@@ -13,12 +13,13 @@ more details.
 
 from typing import TYPE_CHECKING
 
-import common
-from common import ProfilerContext, profilerDecoration
-from common import log, verbosity
 from fl_classes import FlMidiMsg
+
+import common
+from common import ProfilerContext, log, profilerDecoration, verbosity
 from common.plug_indexes import PluginIndex, WindowIndex
 from common.util.events import eventToString
+
 from .dev_state import DeviceState
 
 if TYPE_CHECKING:

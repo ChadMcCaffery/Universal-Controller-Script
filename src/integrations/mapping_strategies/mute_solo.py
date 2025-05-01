@@ -10,13 +10,14 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
-from typing import Callable, Any
+from typing import Any, Callable
+
+from common.plug_indexes.fl_index import FlIndex
 from common.tracks import AbstractTrack
 from common.types import Color
-from common.plug_indexes.fl_index import FlIndex
 from control_surfaces import (
-    ControlShadowEvent,
     ControlShadow,
+    ControlShadowEvent,
     GenericFaderButton,
     MuteButton,
     SoloButton,

@@ -13,13 +13,13 @@ more details.
 # from __future__ import annotations
 
 from abc import abstractmethod
-from fl_classes import FlMidiMsg
-from typing import TYPE_CHECKING
 from time import time
+from typing import TYPE_CHECKING
+
+from fl_classes import FlMidiMsg
 
 if TYPE_CHECKING:
-    from . import ControlSurface
-    from . import ControlShadow
+    from . import ControlShadow, ControlSurface
 
 
 class IControlHash:

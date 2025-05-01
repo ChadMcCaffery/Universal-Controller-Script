@@ -10,19 +10,20 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from typing import Callable
+
 from control_surfaces.matchers import (
     BasicControlMatcher,
     ShiftMatcher,
     ShiftView,
 )
 from devices.novation.launchkey.incontrol.controls import (
-    LkDrumPadMatcher,
-    StopSoloMuteButton,
     LkDeviceSelect,
+    LkDrumPadMatcher,
     LkMk3DrumPad,
     LkMk3DrumPadActivity,
-    LkMk3DrumPadSolo,
     LkMk3DrumPadMute,
+    LkMk3DrumPadSolo,
+    StopSoloMuteButton,
 )
 from devices.novation.launchkey.incontrol.controls.activity import (
     LkDeviceSelectExtras,

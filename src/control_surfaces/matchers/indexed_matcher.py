@@ -10,15 +10,19 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
-from typing import Optional, Sequence
-from control_surfaces.event_patterns import (
-    IEventPattern,
-    BasicPattern,
-    ForwardedPattern
-)
+from collections.abc import Sequence
+from typing import Optional
+
 from fl_classes import FlMidiMsg, isMidiMsgStandard
+
 from common.util.events import decodeForwardedEvent
 from control_surfaces import ControlEvent, ControlSurface
+from control_surfaces.event_patterns import (
+    BasicPattern,
+    ForwardedPattern,
+    IEventPattern,
+)
+
 from . import IControlMatcher
 
 
@@ -82,10 +86,7 @@ class IndexedMatcher(IControlMatcher):
     def matchEvent(self, event: FlMidiMsg) -> Optional[ControlEvent]:
         if not self.__pattern.matchEvent(event):
             return None
-        if self.__forwarded:
-            decoded = decodeForwardedEvent(event)
-        else:
-            decoded = event
+        decoded = decodeForwardedEvent(event) if self.__forwarded else event
         assert isMidiMsgStandard(decoded)
         idx = decoded.data1 - self.__start
         match = self.__controls[idx].match(event)

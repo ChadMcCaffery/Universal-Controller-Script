@@ -14,10 +14,10 @@ from common.extension_manager import ExtensionManager
 from devices import DeviceShadow
 from integrations import PluginIntegration
 from integrations.mapping_strategies import (
-    PedalStrategy,
-    WheelStrategy,
     NoteStrategy,
+    PedalStrategy,
     PresetNavigationStrategy,
+    WheelStrategy,
 )
 
 

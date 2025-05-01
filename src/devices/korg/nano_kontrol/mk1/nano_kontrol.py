@@ -15,27 +15,29 @@ more details.
 """
 
 from typing import Optional
-from common.extension_manager import ExtensionManager
-from control_surfaces.event_patterns import IEventPattern, BasicPattern
+
 from fl_classes import FlMidiMsg
+
+from common.extension_manager import ExtensionManager
+from control_surfaces import (
+    ControlSwitchButton,
+    Fader,
+    FastForwardButton,
+    Knob,
+    MuteButton,
+    PlayButton,
+    RecordButton,
+    RewindButton,
+    SoloButton,
+    StopButton,
+)
+from control_surfaces.event_patterns import BasicPattern, IEventPattern
+from control_surfaces.matchers import BasicControlMatcher
 from control_surfaces.value_strategies import (
     ButtonData2Strategy,
     Data2Strategy,
 )
 from devices import Device
-from control_surfaces.matchers import BasicControlMatcher
-from control_surfaces import (
-    StopButton,
-    PlayButton,
-    ControlSwitchButton,
-    RecordButton,
-    FastForwardButton,
-    RewindButton,
-    MuteButton,
-    SoloButton,
-    Fader,
-    Knob,
-)
 
 
 class NanoKontrol(Device):

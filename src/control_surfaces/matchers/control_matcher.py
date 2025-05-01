@@ -10,9 +10,12 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
-from typing import Optional, Sequence
 from abc import abstractmethod
+from collections.abc import Sequence
+from typing import Optional
+
 from fl_classes import FlMidiMsg
+
 from common.util.abstract_method_error import AbstractMethodError
 from control_surfaces import ControlEvent, ControlSurface
 

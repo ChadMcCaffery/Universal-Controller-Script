@@ -14,18 +14,20 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from typing import Optional
+
 import device
 import general
 import midi
-from common.types import Color
+
 from common.extension_manager import ExtensionManager
+from common.types import Color
 from control_surfaces import (
+    ControlShadow,
+    ControlShadowEvent,
+    Encoder,
     GenericFader,
     GenericKnob,
-    Encoder,
     ModXY,
-    ControlShadowEvent,
-    ControlShadow,
 )
 from devices import DeviceShadow
 from integrations import CoreIntegration

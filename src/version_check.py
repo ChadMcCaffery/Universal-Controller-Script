@@ -3,7 +3,7 @@ import ui
 
 def versionCheck():
     try:
-        from consts import checkFlVersion, formatVersion, MIN_FL_VERSION
+        from consts import MIN_FL_VERSION, checkFlVersion, formatVersion
     except ImportError as e:
         print(e)
     try:

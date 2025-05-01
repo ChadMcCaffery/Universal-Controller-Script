@@ -10,18 +10,17 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from typing import Any
+
 import channels
 
-from common.param import Param
-from common.types import Color
 from common.extension_manager import ExtensionManager
+from common.param import Param
 from common.plug_indexes import GeneratorIndex
+from common.types import Color
 from common.util.grid_mapper import GridCell
-from control_surfaces import ControlShadowEvent
-from control_surfaces import Fader
+from control_surfaces import ControlShadowEvent, Fader
 from devices import DeviceShadow
-from integrations import PluginIntegration
-from integrations import event_filters, tick_filters
+from integrations import PluginIntegration, event_filters, tick_filters
 from integrations.mapping_strategies import GridStrategy
 
 # Params

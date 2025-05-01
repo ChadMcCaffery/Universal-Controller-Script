@@ -9,14 +9,15 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
-import channels
+from typing import Callable, Optional, TypeVar, Union
 
-from .abstract import AbstractTrack
-from typing import Optional, TypeVar, Callable, Union
-from typing_extensions import ParamSpec, Concatenate
+import channels
+from typing_extensions import Concatenate, ParamSpec
+
 from common.types import Color
 from common.util.api_fixes import getGroupChannelIndex
 
+from .abstract import AbstractTrack
 
 T = TypeVar('T')
 R = TypeVar('R')

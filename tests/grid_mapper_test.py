@@ -1,8 +1,9 @@
 """
 Tests for the grid mapper utility
 """
-from jestspectation import ObjectContainingItems, Any
-from common.util.grid_mapper import grid_map, GridCell
+from jestspectation import Any, ObjectContainingItems
+
+from common.util.grid_mapper import GridCell, grid_map
 
 
 def cell_in(group_number: int):

@@ -10,14 +10,18 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from abc import abstractmethod
-from typing import Optional, Sequence
-from control_surfaces.event_patterns import BasicPattern
+from collections.abc import Sequence
+from typing import Optional
+
 from fl_classes import FlMidiMsg
-from control_surfaces.matchers import BasicControlMatcher
+
 from control_surfaces import ControlSurface, DrumPad
+from control_surfaces.event_patterns import BasicPattern
+from control_surfaces.matchers import BasicControlMatcher
 from control_surfaces.value_strategies import (
     Data2Strategy,
 )
+
 from .basic import DummyDeviceAbstract
 
 __all__ = [

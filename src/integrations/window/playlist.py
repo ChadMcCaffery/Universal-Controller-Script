@@ -10,31 +10,33 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from typing import Any, cast
+
 import arrangement
-import ui
-import playlist
-import patterns
-import transport
 import general
+import patterns
+import playlist
+import transport
+import ui
+
 from common import getContext
+from common.extension_manager import ExtensionManager
+from common.plug_indexes import FlIndex, WindowIndex
 from common.tracks import PlaylistTrack
 from common.types import Color
-from common.extension_manager import ExtensionManager
-from common.plug_indexes import WindowIndex, FlIndex
 from common.util.api_fixes import getFirstPlaylistSelection
-from control_surfaces import consts
-from control_surfaces import ControlShadowEvent
 from control_surfaces import (
-    MoveJogWheel,
-    StandardJogWheel,
-    JogWheel,
-    ToolSelector,
+    ControlShadowEvent,
+    DirectionDown,
+    DirectionLeft,
     DirectionNext,
     DirectionPrevious,
-    DirectionLeft,
     DirectionRight,
     DirectionUp,
-    DirectionDown,
+    JogWheel,
+    MoveJogWheel,
+    StandardJogWheel,
+    ToolSelector,
+    consts,
 )
 from devices import DeviceShadow
 from integrations import WindowIntegration

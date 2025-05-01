@@ -10,29 +10,30 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
+from typing import Any
+
 import channels
 import general
 import transport
-from typing import Any
 
-from common.extension_manager import ExtensionManager
 from common import getContext
+from common.extension_manager import ExtensionManager
 from common.types import Color
 from common.util.api_fixes import getUndoPosition
 from control_surfaces import (
-    ControlShadowEvent,
+    CaptureMidiButton,
     ControlShadow,
-    UndoButton,
-    RedoButton,
-    UndoRedoButton,
-    SaveButton,
+    ControlShadowEvent,
+    PauseActiveButton,
     QuantizeButton,
+    RedoButton,
+    SaveButton,
     SwitchActiveButton,
     SwitchActivePluginButton,
-    SwitchActiveWindowButton,
     SwitchActiveToggleButton,
-    PauseActiveButton,
-    CaptureMidiButton,
+    SwitchActiveWindowButton,
+    UndoButton,
+    UndoRedoButton,
 )
 from devices import DeviceShadow
 from integrations import CoreIntegration

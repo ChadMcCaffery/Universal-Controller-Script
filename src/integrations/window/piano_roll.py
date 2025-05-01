@@ -11,14 +11,14 @@ more details.
 """
 import transport
 import ui
+
 from common.extension_manager import ExtensionManager
 from common.plug_indexes import WindowIndex
 from common.types import Color
+from control_surfaces import ControlShadowEvent, ToolSelector
 from devices import DeviceShadow
 from integrations import WindowIntegration
 from integrations.event_filters import filterButtonLift
-from control_surfaces import ToolSelector, ControlShadowEvent
-
 
 # TODO: Annotate tool names, like in playlist
 TOOL_COLORS = [

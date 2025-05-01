@@ -12,26 +12,29 @@ more details.
 """
 # from __future__ import annotations
 
-from fl_classes import FlMidiMsg
+from abc import abstractmethod
 from time import time
 from typing import Optional, final
-from abc import abstractmethod
+
+from fl_classes import FlMidiMsg
+
 from common import getContext
-from common.util.abstract_method_error import AbstractMethodError
 from common.types import Color
+from common.util.abstract_method_error import AbstractMethodError
 from control_surfaces.event_patterns import NullPattern
 from control_surfaces.value_strategies import NullStrategy
-from ..event_patterns import IEventPattern
-from ..value_strategies import IValueStrategy
+
 from ..control_mapping import ControlEvent, ControlMapping
+from ..event_patterns import IEventPattern
 from ..managers import (
-    IAnnotationManager,
-    IColorManager,
-    IValueManager,
     DummyAnnotationManager,
     DummyColorManager,
     DummyValueManager,
+    IAnnotationManager,
+    IColorManager,
+    IValueManager,
 )
+from ..value_strategies import IValueStrategy
 
 
 class ControlSurface:

@@ -8,15 +8,14 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from typing import Any
-from common.param import Param
-from common.types import Color
+
 from common.extension_manager import ExtensionManager
+from common.param import Param
 from common.plug_indexes import GeneratorIndex
-from control_surfaces import Fader, Knob, Encoder
-from control_surfaces import ControlShadowEvent
+from common.types import Color
+from control_surfaces import ControlShadowEvent, Encoder, Fader, Knob
 from devices import DeviceShadow
-from integrations import PluginIntegration
-from integrations import event_filters, tick_filters
+from integrations import PluginIntegration, event_filters, tick_filters
 
 # Number of parameters in the parametric EQ
 NUM_PARAMS = 7

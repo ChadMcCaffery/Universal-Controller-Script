@@ -11,6 +11,7 @@ more details.
 """
 
 from abc import abstractmethod
+
 from fl_classes import FlMidiMsg
 
 

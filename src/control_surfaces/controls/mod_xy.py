@@ -30,9 +30,9 @@ class ModXY(ControlSurface):
     """
     @staticmethod
     def getControlAssignmentPriorities() -> 'tuple[type[ControlSurface], ...]':
+        from .encoder import Encoder
         from .fader import Fader
         from .knob import Knob
-        from .encoder import Encoder
         return (Fader, Knob, Encoder)
 
 

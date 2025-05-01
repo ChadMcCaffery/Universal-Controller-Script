@@ -10,19 +10,19 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 import ui
-from devices import DeviceShadow
-from integrations.event_filters import filterButtonLift
-from common.types import Color
 
+from common.types import Color
 from control_surfaces import (
+    DirectionDown,
+    DirectionLeft,
     DirectionNext,
     DirectionPrevious,
-    DirectionLeft,
     DirectionRight,
-    DirectionUp,
-    DirectionDown,
     DirectionSelect,
+    DirectionUp,
 )
+from devices import DeviceShadow
+from integrations.event_filters import filterButtonLift
 
 BOUND_COLOR = Color.fromInteger(0x888888)
 

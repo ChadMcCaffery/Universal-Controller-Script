@@ -11,15 +11,16 @@ more details.
 """
 
 import pytest
+
 # from common.types import FlMidiMsg
 from control_surfaces import (
     ControlSurface,
+    Fader,
+    Knob,
+    LoopButton,
     Note,
     PlayButton,
     StopButton,
-    LoopButton,
-    Fader,
-    Knob,
 )
 from devices import DeviceShadow
 from tests.helpers.devices import DummyDeviceBasic

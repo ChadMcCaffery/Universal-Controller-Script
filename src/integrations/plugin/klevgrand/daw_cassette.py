@@ -9,18 +9,17 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
-from common.param import Param
-from common.types import Color
 from common.extension_manager import ExtensionManager
+from common.param import Param
 from common.plug_indexes import EffectIndex
+from common.types import Color
 from common.util.grid_mapper import GridCell
-from control_surfaces import ControlShadowEvent, ControlShadow
+from control_surfaces import ControlShadow, ControlShadowEvent
 from devices import DeviceShadow
 from integrations import PluginIntegration
-from integrations.mapping_strategies import SimpleFaders, GridStrategy
 from integrations.event_filters import toEffectIndex as eEffectIndex
+from integrations.mapping_strategies import GridStrategy, SimpleFaders
 from integrations.tick_filters import toEffectIndex as tEffectIndex
-
 
 PLUG_COLOR = Color.fromInteger(0xccccb7)
 

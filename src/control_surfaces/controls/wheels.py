@@ -12,15 +12,17 @@ more details.
 
 from typing import Optional
 
+from fl_classes import FlMidiMsg, isMidiMsgStandard
+
 from control_surfaces.managers import (
     IAnnotationManager,
     IColorManager,
     IValueManager,
 )
+
 from ..event_patterns import BasicPattern, fromNibbles
-from fl_classes import FlMidiMsg, isMidiMsgStandard
-from . import ControlSurface
 from ..value_strategies import Data2Strategy, IValueStrategy
+from . import ControlSurface
 
 __all__ = [
     'ModWheel',

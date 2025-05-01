@@ -7,8 +7,8 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
-from .control_switch import LkControlSwitchButton
 from ...colors.mk2 import COLORS
+from .control_switch import LkControlSwitchButton
 
 
 class LkMk2ControlSwitchButton(LkControlSwitchButton):

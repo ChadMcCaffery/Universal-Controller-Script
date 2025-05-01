@@ -11,8 +11,9 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from abc import abstractmethod
-from . import IScriptState
 from typing import TYPE_CHECKING
+
+from . import IScriptState
 
 if TYPE_CHECKING:
     from devices import Device

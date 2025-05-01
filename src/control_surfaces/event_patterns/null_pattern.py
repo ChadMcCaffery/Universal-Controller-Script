@@ -8,6 +8,7 @@ Authors:
 """
 
 from fl_classes import FlMidiMsg
+
 from . import IEventPattern, fulfilByte
 
 

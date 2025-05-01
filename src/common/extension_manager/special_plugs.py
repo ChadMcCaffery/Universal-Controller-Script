@@ -13,16 +13,16 @@ more details.
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from integrations import CoreIntegration
     from devices import Device
+    from integrations import CoreIntegration
 
 
 class SpecialPluginCollection:
     """Collection of special plugins registered to the script.
     """
     def __init__(self) -> None:
-        self.__types: list[type['CoreIntegration']] = []
-        self.__instantiated: dict[type['CoreIntegration'], 'CoreIntegration']\
+        self.__types: list[type[CoreIntegration]] = []
+        self.__instantiated: dict[type[CoreIntegration], CoreIntegration]\
             = {}
 
     def register(self, plug: type['CoreIntegration']) -> None:
@@ -57,7 +57,7 @@ class SpecialPluginCollection:
             # If plugin should be active
             if p.shouldBeActive():
                 # If it hasn't been instantiated yet, instantiate it
-                if p not in self.__instantiated.keys():
+                if p not in self.__instantiated:
                     self.__instantiated[p] = p.create(DeviceShadow(device))
                 ret.append(self.__instantiated[p])
         return ret
@@ -78,7 +78,7 @@ class SpecialPluginCollection:
         return other in self.__types
 
     def inspect(self, plug: type['CoreIntegration']) -> str:
-        if plug in self.__instantiated.keys():
+        if plug in self.__instantiated:
             return str(self.__instantiated[plug])
         elif plug in self.__types:
             return f"{plug} (Not instantiated)"

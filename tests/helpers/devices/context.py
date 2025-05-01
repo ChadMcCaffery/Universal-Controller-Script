@@ -10,7 +10,8 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from common.context_manager import getContext, unsafeResetContext
-from .basic import DummyDeviceBasic, DummyDeviceAbstract
+
+from .basic import DummyDeviceAbstract, DummyDeviceBasic
 
 __all__ = [
     'DummyDeviceContext',

@@ -10,14 +10,15 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from typing import Any
+
+from common import ExtensionManager
+from common.param import Param
 from common.plug_indexes import GeneratorIndex
 from common.types import Color
-from common.param import Param
+from control_surfaces import ControlShadow, ControlShadowEvent, PitchWheel
 from devices import DeviceShadow
-from common import ExtensionManager
-from control_surfaces import PitchWheel, ControlShadowEvent, ControlShadow
-from integrations.mapping_strategies import SimpleFaders
 from integrations import PluginIntegration, event_filters, tick_filters
+from integrations.mapping_strategies import SimpleFaders
 
 MACRO_START = 211
 VITAL_COLOR = Color.fromInteger(0xAA88FF)

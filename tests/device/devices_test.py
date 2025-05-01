@@ -11,6 +11,7 @@ more details.
 """
 
 import pytest
+
 from common import ExtensionManager
 from devices import Device
 

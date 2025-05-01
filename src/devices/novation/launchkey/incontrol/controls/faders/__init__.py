@@ -21,14 +21,14 @@ __all__ = [
 
 from .mk2 import (
     LkMk2Fader,
-    LkMk2MasterFader,
     LkMk2FaderButton,
-    LkMk2MasterFaderButton,
     LkMk2FaderSet,
+    LkMk2MasterFader,
+    LkMk2MasterFaderButton,
 )
 from .mk3 import (
     LkMk3Fader,
-    LkMk3MasterFader,
     LkMk3FaderButton,
     LkMk3FaderSet,
+    LkMk3MasterFader,
 )

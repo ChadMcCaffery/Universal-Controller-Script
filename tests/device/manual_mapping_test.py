@@ -11,10 +11,11 @@ more details.
 """
 
 import pytest
-from fl_model import FlContext
-from common import getContext, ExtensionManager, unsafeResetContext
-from common.states import WaitingForDevice, DeviceState
 from fl_classes import FlMidiMsg
+from fl_model import FlContext
+
+from common import ExtensionManager, getContext, unsafeResetContext
+from common.states import DeviceState, WaitingForDevice
 from devices import Device
 
 

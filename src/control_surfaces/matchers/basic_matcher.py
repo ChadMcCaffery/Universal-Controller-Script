@@ -11,9 +11,13 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
-from typing import Optional, Sequence
+from collections.abc import Sequence
+from typing import Optional
+
 from fl_classes import FlMidiMsg
+
 from control_surfaces import ControlEvent, ControlSurface
+
 from . import IControlMatcher
 
 

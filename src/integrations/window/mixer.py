@@ -9,40 +9,42 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
-from typing import Any
-import ui
+from typing import Any, Optional
+
 import mixer
+import ui
+
 from common import getContext
-from common.tracks.mixer_track import MixerTrack
-from common.types import Color
 from common.extension_manager import ExtensionManager
 from common.plug_indexes import WindowIndex
+from common.tracks.mixer_track import MixerTrack
+from common.types import Color
 from common.util.api_fixes import (
-    getSelectedDockMixerTracks,
     getMixerDockSides,
+    getSelectedDockMixerTracks,
     getSelectedMixerTracks,
 )
-from common.util.snap import snap
 from common.util.misc import clamp
-from control_surfaces import consts
-from control_surfaces import ControlShadowEvent
+from common.util.snap import snap
 from control_surfaces import (
+    ArmButton,
+    ControlShadowEvent,
     ControlSurface,
-    JogWheel,
-    StandardJogWheel,
-    Fader,
-    Knob,
+    ControlSwitchButton,
     Encoder,
+    Fader,
+    JogWheel,
+    Knob,
     MasterFader,
     MasterKnob,
-    ArmButton,
     SelectButton,
-    ControlSwitchButton,
+    StandardJogWheel,
+    consts,
 )
 from devices import DeviceShadow
+from integrations import WindowIntegration
 from integrations.event_filters import filterButtonLift
 from integrations.mapping_strategies import MuteSoloStrategy
-from integrations import WindowIntegration
 
 INDEX = WindowIndex.MIXER
 COLOR_DISABLED = Color.fromGrayscale(0.3, False)
@@ -176,9 +178,12 @@ class Mixer(WindowIntegration):
         assert len(dock_sides), "No elements on the dock side"
 
         # Find index of first selected track on that docking side
-        for index, track_index in enumerate(dock_sides):
+        index: Optional[int] = None
+        for index, track_index in enumerate(dock_sides):  # noqa: B007
             if track_index == selected[0]:
                 break
+
+        assert index is not None
 
         # Calculate first track that should be selected
         if index + self._len >= len(dock_sides):

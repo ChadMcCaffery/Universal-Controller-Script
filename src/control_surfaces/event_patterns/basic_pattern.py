@@ -13,6 +13,7 @@ more details.
 from typing import TYPE_CHECKING, Any, Callable, Optional
 
 from fl_classes import FlMidiMsg, isMidiMsgStandard, isMidiMsgSysex
+
 from . import ByteMatch, IEventPattern, fulfilByte
 
 

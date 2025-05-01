@@ -10,22 +10,23 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 import ui
+from fl_classes import FlMidiMsg
+
 import consts
 from common import log, verbosity
-from fl_classes import FlMidiMsg
 from common.exceptions import (
-    UcsError,
-    DeviceRecognizeError,
     DeviceInitializeError,
-    EventInspectError,
-    EventEncodeError,
+    DeviceRecognizeError,
     EventDecodeError,
     EventDispatchError,
+    EventEncodeError,
+    EventInspectError,
     InvalidConfigError,
+    UcsError,
 )
 from common.util.events import eventToString
-from . import IScriptState
 
+from . import IScriptState
 
 ERROR_MAPPINGS: dict[type[Exception], dict] = {
     DeviceRecognizeError: {

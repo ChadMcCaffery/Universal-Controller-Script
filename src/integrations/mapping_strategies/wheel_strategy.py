@@ -11,15 +11,13 @@ more details.
 """
 
 from typing import Any
-from consts import PARAM_CC_START
-from common.param import Param
-from common.plug_indexes import PluginIndex, GeneratorIndex
 
-from control_surfaces import ModWheel, PitchWheel
-from control_surfaces import ControlShadowEvent
+from common.param import Param
+from common.plug_indexes import GeneratorIndex, PluginIndex
+from consts import PARAM_CC_START
+from control_surfaces import ControlShadowEvent, ModWheel, PitchWheel
 from devices import DeviceShadow
 from integrations.event_filters import toPluginIndex
-
 
 mod_wheel = Param(PARAM_CC_START + 1)
 

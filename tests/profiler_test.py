@@ -12,8 +12,10 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
-import pytest
 import time
+
+import pytest
+
 from common import getContext, unsafeResetContext
 from common.profiler import ProfilerContext, profilerDecoration
 from tests.helpers import floatApproxEqMagnitude

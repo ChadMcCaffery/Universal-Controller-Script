@@ -10,18 +10,18 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
+from typing import Any
+
 import ui
 
-from typing import Any
-from control_surfaces import consts
-
 from control_surfaces import (
+    ControlShadowEvent,
     JogWheel,
-    StandardJogWheel,
-    ShiftedJogWheel,
     MoveJogWheel,
+    ShiftedJogWheel,
+    StandardJogWheel,
+    consts,
 )
-from control_surfaces import ControlShadowEvent
 from devices import DeviceShadow
 
 
@@ -29,6 +29,7 @@ class JogStrategy:
     """
     Maps jog wheels to forwards/backwards navigation
     """
+
     def __init__(self, shadow: DeviceShadow) -> None:
         """
         Maps jog wheels to forwards/backwards navigation
@@ -42,11 +43,7 @@ class JogStrategy:
             one_type=False,
         )
 
-    def jogWheel(
-        self,
-        control: ControlShadowEvent,
-        *args: Any
-    ) -> bool:
+    def jogWheel(self, control: ControlShadowEvent, *args: Any) -> bool:
         if control.value == consts.JOG_NEXT:
             increment = 1
         elif control.value == consts.JOG_PREV:
@@ -57,9 +54,9 @@ class JogStrategy:
         else:
             return True
 
-        if isinstance(control.getControl(), StandardJogWheel):
-            ui.jog(increment)
-        elif isinstance(control.getControl(), ShiftedJogWheel):
+        if isinstance(
+            control.getControl(), (StandardJogWheel, ShiftedJogWheel)
+        ):
             ui.jog(increment)
         elif isinstance(control.getControl(), MoveJogWheel):
             ui.moveJog(increment)

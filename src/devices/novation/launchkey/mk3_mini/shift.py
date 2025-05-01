@@ -10,34 +10,34 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
+from control_surfaces import (
+    CaptureMidiButton,
+    NullControl,
+)
 from control_surfaces.event_patterns import BasicPattern, ForwardedPattern
+from control_surfaces.matchers import (
+    BasicControlMatcher,
+    ShiftMatcher,
+    ShiftView,
+)
 from control_surfaces.value_strategies import (
     ButtonData2Strategy,
     ForwardedStrategy,
 )
-from control_surfaces import (
-    NullControl,
-    CaptureMidiButton,
-)
-from control_surfaces.matchers import (
-    ShiftMatcher,
-    ShiftView,
-    BasicControlMatcher,
-)
 from devices.novation.launchkey.incontrol.controls import (
-    LkMk3ControlSwitchButton,
-    LkMk3RecordButton,
-    Mk3DirectionLeft,
-    Mk3DirectionRight,
-    MiniMk3DirectionUp,
-    MiniMk3DirectionDown,
-    StopSoloMuteButton,
     LkDrumPadMatcher,
+    LkMk3ControlSwitchButton,
     LkMk3DrumPad,
-    LkMk3DrumPadSolo,
     LkMk3DrumPadMute,
+    LkMk3DrumPadSolo,
     LkMk3MiniDrumPadActivity,
     LkMk3PlayButton,
+    LkMk3RecordButton,
+    MiniMk3DirectionDown,
+    MiniMk3DirectionUp,
+    Mk3DirectionLeft,
+    Mk3DirectionRight,
+    StopSoloMuteButton,
 )
 
 

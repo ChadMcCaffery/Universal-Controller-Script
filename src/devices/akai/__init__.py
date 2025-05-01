@@ -12,4 +12,4 @@ more details.
 
 __all__ = ['mk3', 'plus',]
 
-from . import (mk3, plus)
+from . import mk3, plus

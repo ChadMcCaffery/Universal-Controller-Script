@@ -11,46 +11,48 @@ more details.
 """
 
 from typing import Optional
-import device
 
-from control_surfaces.event_patterns import BasicPattern
-from common.extension_manager import ExtensionManager
+import device
 from fl_classes import FlMidiMsg
+
+from common.extension_manager import ExtensionManager
 from control_surfaces import (
     StandardModWheel,
     StandardPitchWheel,
     SustainPedal,
 )
-from devices import Device
+from control_surfaces.event_patterns import BasicPattern
 from control_surfaces.matchers import (
     BasicControlMatcher,
-    NoteMatcher,
     NoteAfterTouchMatcher,
+    NoteMatcher,
 )
+from devices import Device
 from devices.novation.launchkey.incontrol import (
     InControl,
     InControlMatcher,
 )
 from devices.novation.launchkey.incontrol.controls import (
-    LkMk3PlayButton,
-    LkMk3StopButton,
-    LkMk3LoopButton,
-    LkMk3RecordButton,
     LkKnobSet,
-    LkMk3FaderSet,
-    LkMk3ControlSwitchButton,
-    LkQuantizeButton,
-    LkMk3MetronomeButton,
-    LkUndoRedoButton,
     LkMk3CaptureMidiButton,
-    Mk3DirectionUp,
+    LkMk3ControlSwitchButton,
+    LkMk3FaderSet,
+    LkMk3LoopButton,
+    LkMk3MetronomeButton,
+    LkMk3PlayButton,
+    LkMk3RecordButton,
+    LkMk3StopButton,
+    LkPauseActive,
+    LkQuantizeButton,
+    LkUndoRedoButton,
     Mk3DirectionDown,
-    Mk3DirectionUpSilenced,
     Mk3DirectionDownSilenced,
     Mk3DirectionLeft,
     Mk3DirectionRight,
-    LkPauseActive,
+    Mk3DirectionUp,
+    Mk3DirectionUpSilenced,
 )
+
 from .shift import getActivitySwitcherLarge
 
 DEVICE_ID_49 = "Novation.Launchkey.Mk3.49"
