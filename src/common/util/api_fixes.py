@@ -11,18 +11,18 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
-import general
-import ui
+from typing import TYPE_CHECKING, Optional
+
 import channels
+import general
 import mixer
 import playlist
+import ui
 
 from common.profiler import profilerDecoration
-from typing import Optional, TYPE_CHECKING
-
 
 if TYPE_CHECKING:
-    from common.plug_indexes import WindowIndex, PluginIndex
+    from common.plug_indexes import PluginIndex, WindowIndex
 
 
 @profilerDecoration("getFocusedPluginIndex")
@@ -42,7 +42,7 @@ def getFocusedPluginIndex(force: bool = False) -> Optional['PluginIndex']:
     * `int`: grouped index of a channel rack plugin if one is focused
     * `int, int`: index of a mixer plugin if one is focused
     """
-    from common.plug_indexes import GeneratorIndex, EffectIndex
+    from common.plug_indexes import EffectIndex, GeneratorIndex
     # If a mixer plugin is focused
     if ui.getFocused(6):
         form_id = ui.getFocusedFormID()

@@ -28,6 +28,6 @@ class Encoder(ControlSurface):
     """
     @staticmethod
     def getControlAssignmentPriorities() -> 'tuple[type[ControlSurface], ...]':
-        from .knob import Knob
         from .fader import Fader
+        from .knob import Knob
         return (Knob, Fader)

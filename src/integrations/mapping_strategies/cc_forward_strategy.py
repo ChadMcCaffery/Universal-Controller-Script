@@ -9,19 +9,18 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
-from consts import PARAM_CC_START
 from common.param import Param
-from devices import DeviceShadow
-from integrations.event_filters import filterButtonLift
-from common.types import Color
 from common.plug_indexes import FlIndex, PluginIndex
-
+from common.types import Color
+from consts import PARAM_CC_START
 from control_surfaces import (
     ControlShadowEvent,
+    Encoder,
     GenericFader,
     GenericKnob,
-    Encoder,
 )
+from devices import DeviceShadow
+from integrations.event_filters import filterButtonLift
 
 BOUND_COLOR = Color.fromInteger(0x888888)
 

@@ -18,11 +18,4 @@ __all__ = [
     'slicers',
 ]
 
-from . import (
-    fpc,
-    flex,
-    parametric_eq,
-    transistor_bass,
-    harmless,
-    slicers
-)
+from . import flex, fpc, harmless, parametric_eq, slicers, transistor_bass

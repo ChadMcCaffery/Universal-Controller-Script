@@ -18,10 +18,9 @@ __all__ = [
     'controls',
 ]
 
+from . import controls, devices
 from .tools import (
-    floatApproxEqRatio,
-    floatApproxEqMagnitude,
     combinations,
+    floatApproxEqMagnitude,
+    floatApproxEqRatio,
 )
-from . import devices
-from . import controls

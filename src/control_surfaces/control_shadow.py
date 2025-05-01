@@ -11,9 +11,13 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
-from typing import TYPE_CHECKING, Iterator, overload
+from collections.abc import Iterator
+from typing import TYPE_CHECKING, overload
+
 from typing_extensions import TypeGuard
+
 from common.types import Color
+
 from .control_mapping import ControlMapping
 
 if TYPE_CHECKING:

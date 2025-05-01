@@ -9,14 +9,16 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
+from typing import Literal, Optional
+
 import channels
 import plugins
 
 from common.tracks import Channel
-from .plugin import PluginIndex
-from typing import Literal, Optional
 from common.types import Color
 from common.util.api_fixes import getGroupChannelIndex
+
+from .plugin import PluginIndex
 
 
 class GeneratorIndex(PluginIndex):

@@ -8,22 +8,20 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
-from control_surfaces.event_patterns import BasicPattern, ForwardedPattern
 from control_surfaces import (
     Fader,
     GenericFaderButton,
     MasterFader,
 )
+from control_surfaces.event_patterns import BasicPattern, ForwardedPattern
+from control_surfaces.matchers import BasicControlMatcher, IndexedMatcher
 from control_surfaces.value_strategies import (
     Data2Strategy,
     ForwardedStrategy,
 )
-from control_surfaces.matchers import (
-    BasicControlMatcher,
-    IndexedMatcher
-)
-from ..incontrol_surface import ColorInControlSurface
+
 from ...colors.mk3 import COLORS
+from ..incontrol_surface import ColorInControlSurface
 
 __all__ = [
     'LkMk3Fader',

@@ -18,8 +18,8 @@ __all__ = [
 ]
 
 from .index import (
-    toWindowIndex,
-    toPluginIndex,
-    toGeneratorIndex,
     toEffectIndex,
+    toGeneratorIndex,
+    toPluginIndex,
+    toWindowIndex,
 )

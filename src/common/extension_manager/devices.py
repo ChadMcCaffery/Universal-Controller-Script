@@ -10,10 +10,11 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from typing import TYPE_CHECKING
-from common.exceptions import DeviceRecognizeError, DeviceInitializeError
-from common.util.events import eventToString
+
 from fl_classes import FlMidiMsg
 
+from common.exceptions import DeviceInitializeError, DeviceRecognizeError
+from common.util.events import eventToString
 
 if TYPE_CHECKING:
     from devices import Device
@@ -23,7 +24,7 @@ class DeviceCollection:
     """Collection of devices registered to the script
     """
     def __init__(self) -> None:
-        self.__devices: list[type['Device']] = []
+        self.__devices: list[type[Device]] = []
 
     def register(self, device: type['Device']) -> None:
         """

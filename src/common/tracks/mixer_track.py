@@ -11,7 +11,9 @@ more details.
 """
 
 import mixer
+
 from common.types import Color
+
 from .abstract import AbstractTrack
 
 

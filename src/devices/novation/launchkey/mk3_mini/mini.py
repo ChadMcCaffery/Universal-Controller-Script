@@ -11,18 +11,19 @@ more details.
 """
 
 from typing import Optional
-import device
 
-from control_surfaces.event_patterns import BasicPattern
-from common.extension_manager import ExtensionManager
+import device
 from fl_classes import FlMidiMsg
+
+from common.extension_manager import ExtensionManager
 from control_surfaces import (
     StandardModWheel,
     StandardPitchWheel,
     SustainPedal,
 )
-from devices import Device
+from control_surfaces.event_patterns import BasicPattern
 from control_surfaces.matchers import BasicControlMatcher, NoteMatcher
+from devices.device import Device
 from devices.novation.launchkey.incontrol import (
     InControl,
     InControlMatcher,
@@ -30,6 +31,7 @@ from devices.novation.launchkey.incontrol import (
 from devices.novation.launchkey.incontrol.controls import (
     LkKnobSet,
 )
+
 from .shift import getShiftControls
 
 DEVICE_ID = "Novation.Launchkey.Mk3.Mini"

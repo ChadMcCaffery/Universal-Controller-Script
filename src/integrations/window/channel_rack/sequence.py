@@ -11,23 +11,25 @@ more details.
 """
 import channels
 import ui
-from common.types.color import Color
+
 from common.plug_indexes import FlIndex, WindowIndex
+from common.types.color import Color
 from common.util.grid_mapper import GridCell
-from control_surfaces import ControlShadowEvent
 from control_surfaces import (
+    ControlShadowEvent,
+    DirectionDown,
     DirectionLeft,
-    DirectionRight,
     DirectionNext,
     DirectionPrevious,
+    DirectionRight,
     DirectionUp,
-    DirectionDown,
 )
 from control_surfaces.control_shadow import ControlShadow
 from devices import DeviceShadow
-from integrations import WindowIntegration
 from integrations.event_filters import filterButtonLift
+from integrations.integration import WindowIntegration
 from integrations.mapping_strategies.grid_strategy import GridStrategy
+
 from .helpers import INDEX, getChannelRows
 
 # How many steps should be scrolled each time

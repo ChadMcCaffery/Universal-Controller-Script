@@ -25,12 +25,12 @@ from .mk2 import (
     LkMk2DirectionPrevious,
 )
 from .mk3 import (
+    MiniMk3DirectionDown,
+    MiniMk3DirectionUp,
+    Mk3DirectionDown,
+    Mk3DirectionDownSilenced,
     Mk3DirectionLeft,
     Mk3DirectionRight,
-    MiniMk3DirectionUp,
-    MiniMk3DirectionDown,
     Mk3DirectionUp,
-    Mk3DirectionDown,
     Mk3DirectionUpSilenced,
-    Mk3DirectionDownSilenced,
 )

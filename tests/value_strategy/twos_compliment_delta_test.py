@@ -11,6 +11,7 @@ more details.
 """
 import pytest
 from fl_classes import FlMidiMsg
+
 from control_surfaces.value_strategies import TwosComplimentDeltaStrategy
 
 

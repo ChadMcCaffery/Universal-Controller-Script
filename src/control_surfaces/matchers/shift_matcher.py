@@ -10,12 +10,18 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
-from typing import Optional
+from typing import TYPE_CHECKING, Optional
+
 from fl_classes import FlMidiMsg
+
 from common.types import Color
-from control_surfaces import ControlEvent, ControlSurface, NullControl
+from control_surfaces.controls import ControlSurface, NullControl
+
 from ..event_patterns import TruePattern
 from . import IControlMatcher
+
+if TYPE_CHECKING:
+    from control_surfaces import ControlEvent
 
 
 class ShiftView:
@@ -119,7 +125,7 @@ class ShiftMatcher(IControlMatcher):
         self.__changed = True
         super().__init__()
 
-    def matchEvent(self, event: FlMidiMsg) -> Optional[ControlEvent]:
+    def matchEvent(self, event: FlMidiMsg) -> 'Optional[ControlEvent]':
         # Check to see if we can trigger a view
         for view in self.__views:
             # Skip this view if required

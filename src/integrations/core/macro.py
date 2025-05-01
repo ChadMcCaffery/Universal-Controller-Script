@@ -10,33 +10,33 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
+from typing import Any
+
 import channels
 import general
 import transport
-from typing import Any
 
 from common.extension_manager import ExtensionManager
-from common import getContext
 from common.types import Color
 from common.util.api_fixes import getUndoPosition
 from control_surfaces import (
-    ControlShadowEvent,
+    CaptureMidiButton,
     ControlShadow,
-    UndoButton,
-    RedoButton,
-    UndoRedoButton,
-    SaveButton,
+    ControlShadowEvent,
+    PauseActiveButton,
     QuantizeButton,
+    RedoButton,
+    SaveButton,
     SwitchActiveButton,
     SwitchActivePluginButton,
-    SwitchActiveWindowButton,
     SwitchActiveToggleButton,
-    PauseActiveButton,
-    CaptureMidiButton,
+    SwitchActiveWindowButton,
+    UndoButton,
+    UndoRedoButton,
 )
 from devices import DeviceShadow
-from integrations import CoreIntegration
 from integrations.event_filters import filterButtonLift
+from integrations.integration import CoreIntegration
 
 
 class Macro(CoreIntegration):
@@ -117,6 +117,7 @@ class Macro(CoreIntegration):
         control: ControlShadowEvent,
         *args: Any
     ) -> bool:
+        from common import getContext
         if getContext().settings.get("controls.disable_undo_toggle"):
             general.undoUp()
         else:
@@ -157,6 +158,7 @@ class Macro(CoreIntegration):
         control: ControlShadowEvent,
         *args: Any
     ) -> bool:
+        from common import getContext
         c = control.getControl()
         if isinstance(c, SwitchActivePluginButton):
             getContext().activity.toggleWindowsPlugins(True)
@@ -172,6 +174,7 @@ class Macro(CoreIntegration):
         control: ControlShadow,
         *args: Any
     ) -> bool:
+        from common import getContext
         c = control.getControl()
         if isinstance(c, SwitchActivePluginButton):
             if getContext().activity.isPlugActive():
@@ -195,6 +198,7 @@ class Macro(CoreIntegration):
     ) -> bool:
         # TODO: If there's enough demand, potentially add support for a direct
         # controls as well as just a toggle
+        from common import getContext
         getContext().activity.playPause()
         return True
 
@@ -203,6 +207,7 @@ class Macro(CoreIntegration):
         control: ControlShadow,
         *args,
     ):
+        from common import getContext
         if getContext().activity.isUpdating():
             control.color = Color.DISABLED
         else:
@@ -214,6 +219,7 @@ class Macro(CoreIntegration):
         control: ControlShadowEvent,
         *args: Any
     ) -> bool:
+        from common import getContext
         # Find out how much length to write
         time = \
             getContext().settings.get("plugins.general.score_log_dump_length")

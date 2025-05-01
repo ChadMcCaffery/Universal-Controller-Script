@@ -10,6 +10,7 @@ Some features are currently untested which may be required for some layouts.
 * Support for vertical-before-horizontal filling
 * Support for fill directions
 """
+
 import math
 from typing import Optional
 
@@ -18,6 +19,7 @@ class GridCell:
     """
     Represents a mapping for a particular index
     """
+
     def __init__(
         self,
         group_number: int,
@@ -44,8 +46,7 @@ class GridCell:
         """Size of each group"""
         self.group_index = col + group_width * row
         """Index within the group that this cell belongs to"""
-        self.overall_index = \
-            self.group_index + group_number * self.group_size
+        self.overall_index = self.group_index + group_number * self.group_size
         """Overall index, accounting for group number"""
 
     def __repr__(self) -> str:
@@ -166,12 +167,13 @@ def __fill_in_group(
                     filled_items += 1
         except StopIteration:
             # If we've filled all the items
-            if filled_items == group_width * group_height:
-                break
-            # Or if we went off the end
-            elif horizontal_before_vertical and row >= height:
-                break
-            elif not horizontal_before_vertical and col >= width:
+            if (
+                filled_items == group_width * group_height
+                or horizontal_before_vertical
+                and row >= height
+                or not horizontal_before_vertical
+                and col >= width
+            ):
                 break
             # Otherwise, keep trying to fill things in
             else:

@@ -27,20 +27,20 @@ __all__ = [
 
 from .common import (
     LkFastForwardButton,
-    LkRewindButton,
     LkQuantizeButton,
+    LkRewindButton,
     LkUndoRedoButton,
 )
 from .mk2 import (
     LkMk2LoopButton,
-    LkMk2StopButton,
     LkMk2PlayButton,
     LkMk2RecordButton,
+    LkMk2StopButton,
 )
 from .mk3 import (
+    LkMk3CaptureMidiButton,
     LkMk3LoopButton,
-    LkMk3StopButton,
     LkMk3PlayButton,
     LkMk3RecordButton,
-    LkMk3CaptureMidiButton,
+    LkMk3StopButton,
 )

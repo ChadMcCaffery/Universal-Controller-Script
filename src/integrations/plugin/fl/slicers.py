@@ -9,17 +9,18 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
-from common.types import Color
 from common.extension_manager import ExtensionManager
 from common.plug_indexes import GeneratorIndex
+from common.types import Color
 from common.util.grid_mapper import GridCell
+from control_surfaces import ControlShadow, ControlShadowEvent
 from devices import DeviceShadow
-from integrations import PluginIntegration, event_filters, tick_filters
+from integrations import event_filters, tick_filters
+from integrations.integration import PluginIntegration
 from integrations.mapping_strategies.grid_strategy import (
     GridStrategy,
     color_callbacks,
 )
-from control_surfaces import ControlShadowEvent, ControlShadow
 
 
 class Slicers(PluginIntegration):

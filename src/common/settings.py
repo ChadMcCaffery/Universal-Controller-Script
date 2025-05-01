@@ -17,9 +17,10 @@ __all__ = [
 
 import sys
 from typing import Any
-from .util import dict_tools
+
 from . import default_config as d
 from .exceptions import InvalidConfigError
+from .util import dict_tools
 
 # Load the main config
 scripts_dir = \

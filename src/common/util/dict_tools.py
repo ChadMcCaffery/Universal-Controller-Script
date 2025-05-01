@@ -11,6 +11,7 @@ more details.
 """
 
 from typing import Any, Protocol, TypeVar
+
 # from copy import deepcopy
 
 
@@ -75,10 +76,7 @@ def recursiveMergeDictionaries(
 
     for key, value in override.items():
         # Check for invalid settings value
-        if path == '':
-            key_path = key
-        else:
-            key_path = path + '.' + key
+        key_path = key if path == '' else path + '.' + key
         if key not in ref:
             raise KeyError(f"{ERROR_HEADER}: `{key_path}` is "
                            f"not a valid settings value")

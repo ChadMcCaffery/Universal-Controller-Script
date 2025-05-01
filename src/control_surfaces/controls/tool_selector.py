@@ -5,8 +5,8 @@ Contains definition for tool selector button. Used to choose from a selection
 of tools or pages (eg on the playlist).
 """
 
-from .control_surface import ControlSurface
 from .button import Button
+from .control_surface import ControlSurface
 from .drum_pad import DrumPad
 
 

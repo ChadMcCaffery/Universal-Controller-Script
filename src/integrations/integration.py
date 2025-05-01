@@ -11,13 +11,14 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
+from abc import abstractmethod
 from typing import final
-from common import log, verbosity
+
+from common.logger import log, verbosity
+from common.plug_indexes import FlIndex, WindowIndex
 from common.util.abstract_method_error import AbstractMethodError
-from common.plug_indexes import WindowIndex, FlIndex
 from control_surfaces import ControlEvent
 from devices import DeviceShadow
-from abc import abstractmethod
 
 
 class Integration:

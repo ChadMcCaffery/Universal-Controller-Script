@@ -17,5 +17,5 @@ __all__ = [
     'verbosity',
 ]
 
-from .logger import log
 from . import verbosity
+from .logger import log

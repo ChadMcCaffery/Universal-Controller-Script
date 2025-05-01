@@ -12,13 +12,14 @@ more details.
 """
 from typing import Optional
 
-from ..event_patterns import IEventPattern
-from control_surfaces.value_strategies import NullStrategy, IValueStrategy
 from control_surfaces.managers import (
     IAnnotationManager,
     IColorManager,
     IValueManager,
 )
+from control_surfaces.value_strategies import IValueStrategy, NullStrategy
+
+from ..event_patterns import IEventPattern
 from . import ControlSurface
 
 

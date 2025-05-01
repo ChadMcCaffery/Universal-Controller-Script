@@ -11,9 +11,9 @@ more details.
 """
 
 import pytest
+from fl_classes import FlMidiMsg
 
 from control_surfaces.event_patterns import BasicPattern, UnionPattern
-from fl_classes import FlMidiMsg
 
 
 def test_create_not_enough():

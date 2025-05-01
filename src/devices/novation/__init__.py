@@ -14,5 +14,4 @@ __all__ = [
     'sl',
 ]
 
-from . import launchkey
-from . import sl
+from . import launchkey, sl

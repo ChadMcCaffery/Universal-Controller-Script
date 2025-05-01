@@ -9,10 +9,9 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
+from control_surfaces import ControlSurface
 from control_surfaces.event_patterns import BasicPattern, ForwardedPattern
 from control_surfaces.value_strategies import Data2Strategy, ForwardedStrategy
-
-from control_surfaces import ControlSurface
 
 
 class SimpleControl(ControlSurface):

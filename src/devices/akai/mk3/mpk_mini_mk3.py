@@ -11,23 +11,23 @@ more details.
 """
 from typing import Optional
 
+from fl_classes import FlMidiMsg
+
+from common.extension_manager import ExtensionManager
+from control_surfaces import (
+    DrumPad,
+    Knob,
+    StandardModWheel,
+    StandardPitchWheel,
+)
 from control_surfaces.event_patterns import (
     BasicPattern,
     NotePattern,
     UnionPattern,
 )
-from control_surfaces.value_strategies import Data2Strategy
-from common.extension_manager import ExtensionManager
-from fl_classes import FlMidiMsg
-from control_surfaces import (
-    Knob,
-    StandardPitchWheel,
-    StandardModWheel,
-    DrumPad,
-)
-from devices import Device
 from control_surfaces.matchers import BasicControlMatcher, NoteMatcher
-
+from control_surfaces.value_strategies import Data2Strategy
+from devices.device import Device
 
 PAD_NOTES = [
     48, 47, 45, 43,

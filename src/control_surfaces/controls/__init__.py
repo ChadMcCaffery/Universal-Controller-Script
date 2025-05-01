@@ -93,94 +93,93 @@ __all__ = [
     'ActivitySwitcher',
 ]
 
-from .control_surface import ControlSurface
-from .null_control import NullControl
-from .note import Note
-from .wheels import (
-    ModWheel,
-    PitchWheel,
-    StandardModWheel,
-    StandardPitchWheel,
-    Data2PitchWheel,
+from .activity_button import (
+    PauseActiveButton,
+    SwitchActiveButton,
+    SwitchActivePluginButton,
+    SwitchActiveToggleButton,
+    SwitchActiveWindowButton,
 )
+from .activity_switcher import ActivitySwitcher
 from .after_touch import (
     AfterTouch,
     ChannelAfterTouch,
     NoteAfterTouch,
 )
-from .pedal import (
-    Pedal,
-    SustainPedal,
-    SostenutoPedal,
-    SoftPedal,
-)
+from .ambient import Ambient
 from .button import Button, ControlSwitchButton
-from .transport import (
-    TransportButton,
-    PlayButton,
-    StopButton,
-    LoopButton,
-    RecordButton,
-    FastForwardButton,
-    RewindButton,
-    MetronomeButton,
-)
-from .navigation import (
-    NavigationControl,
-    NavigationButton,
-    DpadButtons,
-    DirectionUp,
-    DirectionDown,
-    DirectionLeft,
-    DirectionRight,
-    DirectionSelect,
-    NextPrevButton,
-    DirectionNext,
-    DirectionPrevious,
-)
-from .jog import (
-    JogWheel,
-    StandardJogWheel,
-    ShiftedJogWheel,
-    MoveJogWheel,
-)
-from .fader import GenericFader, Fader, MasterFader
+from .control_surface import ControlSurface
+from .drum_pad import DrumPad
+from .encoder import Encoder
+from .fader import Fader, GenericFader, MasterFader
 from .fader_button import (
+    ArmButton,
     FaderButton,
     GenericFaderButton,
-    MasterGenericFaderButton,
-    MuteButton,
-    MasterMuteButton,
-    SoloButton,
-    MasterSoloButton,
-    ArmButton,
     MasterArmButton,
-    SelectButton,
+    MasterGenericFaderButton,
+    MasterMuteButton,
     MasterSelectButton,
-)
-from .knob import GenericKnob, Knob, MasterKnob
-from .encoder import Encoder
-from .mod_xy import ModXY, ModX, ModY
-from .drum_pad import DrumPad
-from .tool_selector import ToolSelector
-
-from .macro_button import (
-    MacroButton,
-    SaveButton,
-    UndoRedoButton,
-    UndoButton,
-    RedoButton,
-    QuantizeButton,
-    CaptureMidiButton,
-)
-from .activity_button import (
-    SwitchActiveButton,
-    SwitchActivePluginButton,
-    SwitchActiveWindowButton,
-    SwitchActiveToggleButton,
-    PauseActiveButton,
+    MasterSoloButton,
+    MuteButton,
+    SelectButton,
+    SoloButton,
 )
 from .hint_msg import HintMsg
+from .jog import (
+    JogWheel,
+    MoveJogWheel,
+    ShiftedJogWheel,
+    StandardJogWheel,
+)
+from .knob import GenericKnob, Knob, MasterKnob
+from .macro_button import (
+    CaptureMidiButton,
+    MacroButton,
+    QuantizeButton,
+    RedoButton,
+    SaveButton,
+    UndoButton,
+    UndoRedoButton,
+)
+from .mod_xy import ModX, ModXY, ModY
+from .navigation import (
+    DirectionDown,
+    DirectionLeft,
+    DirectionNext,
+    DirectionPrevious,
+    DirectionRight,
+    DirectionSelect,
+    DirectionUp,
+    DpadButtons,
+    NavigationButton,
+    NavigationControl,
+    NextPrevButton,
+)
+from .note import Note
 from .notif_msg import NotifMsg
-from .ambient import Ambient
-from .activity_switcher import ActivitySwitcher
+from .null_control import NullControl
+from .pedal import (
+    Pedal,
+    SoftPedal,
+    SostenutoPedal,
+    SustainPedal,
+)
+from .tool_selector import ToolSelector
+from .transport import (
+    FastForwardButton,
+    LoopButton,
+    MetronomeButton,
+    PlayButton,
+    RecordButton,
+    RewindButton,
+    StopButton,
+    TransportButton,
+)
+from .wheels import (
+    Data2PitchWheel,
+    ModWheel,
+    PitchWheel,
+    StandardModWheel,
+    StandardPitchWheel,
+)

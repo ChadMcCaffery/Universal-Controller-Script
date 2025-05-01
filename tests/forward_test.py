@@ -14,9 +14,8 @@ more details.
 """
 
 import pytest
+from fl_classes import FlMidiMsg
 from fl_model import FlContext
-
-from tests.helpers.devices import DummyDeviceBasic2, DummyDeviceContext
 
 from common.exceptions import (
     EventEncodeError,
@@ -24,15 +23,15 @@ from common.exceptions import (
     # EventDecodeError,
     # EventDispatchError,
 )
-from fl_classes import FlMidiMsg
 from common.util.events import (
-    encodeForwardedEvent,
     decodeForwardedEvent,
+    encodeForwardedEvent,
+    forwardEvent,
     isEventForwarded,
     isEventForwardedHere,
     isEventForwardedHereFrom,
-    forwardEvent,
 )
+from tests.helpers.devices import DummyDeviceBasic2, DummyDeviceContext
 
 
 def test_encode_decode():
@@ -49,9 +48,8 @@ def test_invalid_event_forward():
     """Test that forwarding an event without specifying a target fails from
     the main script
     """
-    with DummyDeviceContext():
-        with pytest.raises(EventEncodeError):
-            encodeForwardedEvent(FlMidiMsg(1, 2, 3))
+    with DummyDeviceContext(), pytest.raises(EventEncodeError):
+        encodeForwardedEvent(FlMidiMsg(1, 2, 3))
 
 
 def test_invalid_event_receive():
@@ -61,9 +59,8 @@ def test_invalid_event_receive():
     with DummyDeviceContext(2):
         e = FlMidiMsg(encodeForwardedEvent(FlMidiMsg(1, 2, 3)))
 
-    with DummyDeviceContext(1):
-        with pytest.raises(EventInspectError):
-            assert isEventForwardedHereFrom(e)
+    with DummyDeviceContext(1), pytest.raises(EventInspectError):
+        assert isEventForwardedHereFrom(e)
 
 
 def test_isEventForwarded():
@@ -106,7 +103,6 @@ def test_isEventForwardedHereFrom_target():
 
 def testForwardChecking():
     """Make sure checks are put into place before we forward an event"""
-    with DummyDeviceContext(2):
-        with FlContext() as fl:
-            fl.device.dispatch_targets = [1]
-            forwardEvent(FlMidiMsg(7, 8, 9))
+    with DummyDeviceContext(2), FlContext() as fl:
+        fl.device.dispatch_targets = [1]
+        forwardEvent(FlMidiMsg(7, 8, 9))

@@ -10,14 +10,13 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from common.types.color import Color
-from control_surfaces.event_patterns import NullPattern
 from control_surfaces import (
     Ambient,
 )
-from control_surfaces.value_strategies import (
-    NullStrategy
-)
+from control_surfaces.event_patterns import NullPattern
 from control_surfaces.managers import IColorManager
+from control_surfaces.value_strategies import NullStrategy
+
 from .sl_color_surface import SlColorSurface
 
 

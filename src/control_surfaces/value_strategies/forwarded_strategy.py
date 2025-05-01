@@ -12,8 +12,10 @@ more details.
 """
 
 from fl_classes import FlMidiMsg
+
 from common.util.events import decodeForwardedEvent, isEventForwarded
-from . import IValueStrategy
+
+from .value_strategy import IValueStrategy
 
 
 class ForwardedStrategy(IValueStrategy):

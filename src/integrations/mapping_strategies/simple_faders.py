@@ -11,12 +11,12 @@ more details.
 """
 
 from common.param import Param, PluginParameter
-from common.types import Color
+from common.plug_indexes import PluginIndex
 from common.profiler import profilerDecoration
-from control_surfaces import ControlShadowEvent, ControlShadow, Fader
+from common.types import Color
+from control_surfaces import ControlShadow, ControlShadowEvent, Fader
 from devices.device_shadow import DeviceShadow
 from integrations.event_filters import toPluginIndex
-from common.plug_indexes import PluginIndex
 
 DEFAULT_COLOR = Color.fromInteger(0x222222)
 

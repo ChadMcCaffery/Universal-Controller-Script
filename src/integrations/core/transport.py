@@ -11,31 +11,31 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
+from typing import Any
+
 import arrangement
 import transport
 import ui
 
-from typing import Any
 from common.context_manager import getContext
-
 from common.extension_manager import ExtensionManager
 from common.types import Color
 from control_surfaces import (
     ControlShadowEvent,
-    NullControl,
-    PlayButton,
-    StopButton,
     FastForwardButton,
-    RewindButton,
-    RecordButton,
+    HintMsg,
     LoopButton,
     MetronomeButton,
-    HintMsg,
+    NullControl,
+    PlayButton,
+    RecordButton,
+    RewindButton,
+    StopButton,
 )
 from control_surfaces.control_shadow import ControlShadow
 from devices import DeviceShadow
-from integrations import CoreIntegration
 from integrations.event_filters import filterButtonLift
+from integrations.integration import CoreIntegration
 
 # Constants
 FAST_FORWARDING = 1

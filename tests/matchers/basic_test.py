@@ -11,6 +11,7 @@ more details.
 """
 
 from fl_classes import FlMidiMsg
+
 from control_surfaces.matchers import BasicControlMatcher
 from tests.helpers.controls import SimpleControl, SimplerControl
 

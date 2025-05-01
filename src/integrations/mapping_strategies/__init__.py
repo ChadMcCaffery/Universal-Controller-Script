@@ -25,14 +25,14 @@ __all__ = [
     'CcForwardStrategy',
 ]
 
-from .pedal_strategy import PedalStrategy
-from .wheel_strategy import WheelStrategy
-from .note_strategy import NoteStrategy
+from .cc_forward_strategy import CcForwardStrategy
 from .direction_strategy import DirectionStrategy
+from .grid_strategy import GridStrategy
 from .jog_strategy import JogStrategy
-from .simple_faders import SimpleFaders
 from .mod_xy import ModXYStrategy
 from .mute_solo import MuteSoloStrategy
-from .grid_strategy import GridStrategy
+from .note_strategy import NoteStrategy
+from .pedal_strategy import PedalStrategy
 from .preset_navigation import PresetNavigationStrategy
-from .cc_forward_strategy import CcForwardStrategy
+from .simple_faders import SimpleFaders
+from .wheel_strategy import WheelStrategy

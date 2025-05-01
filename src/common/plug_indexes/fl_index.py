@@ -12,10 +12,9 @@ more details.
 from abc import abstractmethod
 from typing import TYPE_CHECKING
 
-
 if TYPE_CHECKING:
-    from .window import WindowIndex
     from .plugin import PluginIndex
+    from .window import WindowIndex
 
 
 class FlIndex:

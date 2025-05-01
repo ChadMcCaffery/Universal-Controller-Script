@@ -10,11 +10,13 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from abc import abstractmethod
+
 import plugins
 
-from .fl_index import FlIndex
-from consts import PARAM_CC_START
 from common.tracks import AbstractTrack
+from consts import PARAM_CC_START
+
+from .fl_index import FlIndex
 
 
 class PluginIndex(FlIndex):

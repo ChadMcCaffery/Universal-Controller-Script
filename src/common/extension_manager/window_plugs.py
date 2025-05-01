@@ -13,17 +13,17 @@ more details.
 from typing import TYPE_CHECKING, Optional
 
 if TYPE_CHECKING:
-    from integrations import WindowIntegration
-    from devices import Device
     from common.plug_indexes.fl_index import WindowIndex
+    from devices import Device
+    from integrations import WindowIntegration
 
 
 class WindowPluginCollection:
     """Collection of window plugins registered to the script
     """
     def __init__(self) -> None:
-        self.__mappings: dict[WindowIndex, type['WindowIntegration']] = {}
-        self.__instantiated: dict[WindowIndex, 'WindowIntegration'] = {}
+        self.__mappings: dict[WindowIndex, type[WindowIntegration]] = {}
+        self.__instantiated: dict[WindowIndex, WindowIntegration] = {}
 
     def register(self, plug: type['WindowIntegration']) -> None:
         """
@@ -55,10 +55,10 @@ class WindowPluginCollection:
         """
         from devices.device_shadow import DeviceShadow
         # Plugin already instantiated
-        if id in self.__instantiated.keys():
+        if id in self.__instantiated:
             return self.__instantiated[id]
         # Plugin exists but isn't instantiated
-        elif id in self.__mappings.keys():
+        elif id in self.__mappings:
             self.__instantiated[id] \
                 = self.__mappings[id].create(DeviceShadow(device))
             return self.__instantiated[id]
@@ -83,7 +83,7 @@ class WindowPluginCollection:
     def __len__(self) -> int:
         return len(self.__mappings)
 
-    def _formatPlugin(cls, plug: Optional['WindowIntegration']) -> str:
+    def _formatPlugin(self, plug: Optional['WindowIntegration']) -> str:
         """
         Format info about a plugin instance
 
@@ -108,11 +108,11 @@ class WindowPluginCollection:
         ### Returns:
         * `str`: plugin info
         """
-        matches: list[tuple['WindowIndex', Optional['WindowIntegration']]] = []
+        matches: list[tuple[WindowIndex, Optional[WindowIntegration]]] = []
 
         for id, p in self.__mappings.items():
             if p == plug:
-                if id in self.__instantiated.keys():
+                if id in self.__instantiated:
                     matches.append((id, self.__instantiated[id]))
                 else:
                     matches.append((id, None))

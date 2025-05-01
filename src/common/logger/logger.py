@@ -15,8 +15,9 @@ __all__ = [
     'log'
 ]
 from typing import Optional
+
 from .log_item import LogItem
-from .verbosity import Verbosity, DEFAULT, ERROR, NOTE
+from .verbosity import DEFAULT, ERROR, NOTE, Verbosity
 
 
 class Log:
@@ -94,10 +95,7 @@ class Log:
                     verbosity = context.settings.get("logger.max_verbosity")
 
         assert verbosity is not None
-        if item.verbosity <= verbosity:
-            return True
-        else:
-            return False
+        return item.verbosity <= verbosity
 
     @staticmethod
     def _shouldDetailedPrint(item: LogItem) -> bool:

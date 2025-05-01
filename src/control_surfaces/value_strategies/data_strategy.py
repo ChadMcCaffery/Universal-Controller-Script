@@ -11,7 +11,8 @@ more details.
 """
 
 from fl_classes import FlMidiMsg, isMidiMsgStandard
-from . import IValueStrategy
+
+from .value_strategy import IValueStrategy
 
 
 class DataStrategy(IValueStrategy):

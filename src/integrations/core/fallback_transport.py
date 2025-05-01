@@ -13,14 +13,14 @@ more details.
 
 from common.extension_manager import ExtensionManager
 from devices import DeviceShadow
-from integrations import CoreIntegration
+from integrations.integration import CoreIntegration
 from integrations.mapping_strategies import (
     CcForwardStrategy,
     DirectionStrategy,
     JogStrategy,
     NoteStrategy,
-    WheelStrategy,
     PedalStrategy,
+    WheelStrategy,
 )
 
 

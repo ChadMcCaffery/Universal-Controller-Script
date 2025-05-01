@@ -9,8 +9,8 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
-from tests.helpers.devices import DummyDeviceDrumPads
 from tests.helpers import floatApproxEqRatio
+from tests.helpers.devices import DummyDeviceDrumPads
 
 
 def test_drum_pad_dummy_device_generate_event():

@@ -17,26 +17,25 @@ __all__ = [
     'IntegrationPager',
 ]
 
+# Register all integrations
+from . import (
+    core,
+    plugin,
+    window,
+)
+from .integration import (
+    CoreIntegration,
+    Integration,
+    PluginIntegration,
+    WindowIntegration,
+)
 from .mapping_strategies import (
     NoteStrategy,
     PedalStrategy,
     WheelStrategy,
 )
-
-from .integration import (
-    Integration,
-    CoreIntegration,
-    PluginIntegration,
-    WindowIntegration,
-)
 from .pager import IntegrationPager
 
-# Register all integrations
-from . import (
-    core,
-    window,
-    plugin,
-)
 del (
     core,
     window,

@@ -11,8 +11,9 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
-from typing import TYPE_CHECKING, Union
 import random
+from typing import TYPE_CHECKING, Union
+
 if TYPE_CHECKING:
     from collections.abc import Iterable
 

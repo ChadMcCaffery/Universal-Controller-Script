@@ -11,8 +11,10 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
-from fl_classes import FlMidiMsg
 from abc import abstractmethod
+
+from fl_classes import FlMidiMsg
+
 from common.util.abstract_method_error import AbstractMethodError
 
 

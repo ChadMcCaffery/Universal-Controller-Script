@@ -10,20 +10,21 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
-from control_surfaces.event_patterns import BasicPattern, ForwardedPattern
 from control_surfaces import (
+    CaptureMidiButton,
     LoopButton,
-    StopButton,
     PlayButton,
     RecordButton,
-    CaptureMidiButton,
+    StopButton,
 )
+from control_surfaces.event_patterns import BasicPattern, ForwardedPattern
 from control_surfaces.value_strategies import (
     ButtonData2Strategy,
     ForwardedStrategy,
 )
-from ..incontrol_surface import GrayscaleInControlSurface
+
 from ...colors.grayscale import COLORS
+from ..incontrol_surface import GrayscaleInControlSurface
 
 __all__ = [
     'LkMk3LoopButton',

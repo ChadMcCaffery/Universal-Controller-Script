@@ -11,7 +11,8 @@ more details.
 """
 
 from fl_classes import FlMidiMsg
-from control_surfaces import Note, PlayButton, Fader
+
+from control_surfaces import Fader, Note, PlayButton
 from tests.helpers.devices import DummyDeviceBasic
 
 

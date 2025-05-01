@@ -11,7 +11,7 @@ more details.
 """
 
 from . import BasicPattern
-from .byte_match import fromNibbles, ByteMatch
+from .byte_match import ByteMatch, fromNibbles
 
 
 class NotePattern(BasicPattern):

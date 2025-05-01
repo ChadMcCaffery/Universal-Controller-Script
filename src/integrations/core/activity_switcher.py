@@ -14,21 +14,24 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
+import contextlib
+
 from common.extension_manager import ExtensionManager
-from common import getContext
-from common.types import Color
 from common.plug_indexes import (
     FlIndex,
     PluginIndex,
 )
+from common.types import Color
 from control_surfaces import (
     ActivitySwitcher as ActivitySwitchControl,
-    ControlShadowEvent,
+)
+from control_surfaces import (
     ControlShadow,
+    ControlShadowEvent,
 )
 from devices import DeviceShadow
-from integrations import CoreIntegration
 from integrations.event_filters import filterButtonLift
+from integrations.integration import CoreIntegration
 
 
 def getActivityColor(activity: FlIndex) -> Color:
@@ -78,10 +81,9 @@ class ActivitySwitcher(CoreIntegration):
         _,
         c_index: int,
     ) -> bool:
-        try:
+        from common import getContext
+        with contextlib.suppress(IndexError):
             getContext().activity.getHistoryActivity(c_index).focus()
-        except IndexError:
-            pass
         return True
 
     def tActivity(
@@ -90,6 +92,7 @@ class ActivitySwitcher(CoreIntegration):
         _,
         c_index: int,
     ):
+        from common import getContext
         try:
             activity = getContext().activity.getHistoryActivity(c_index)
             control.color = getActivityColor(activity)

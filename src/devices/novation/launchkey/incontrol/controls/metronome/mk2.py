@@ -7,10 +7,11 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
-from ...colors.mk2 import COLORS
-from control_surfaces.event_patterns import ForwardedPattern,  NotePattern
-from control_surfaces.value_strategies import NoteStrategy, ForwardedStrategy
 from control_surfaces import MetronomeButton
+from control_surfaces.event_patterns import ForwardedPattern, NotePattern
+from control_surfaces.value_strategies import ForwardedStrategy, NoteStrategy
+
+from ...colors.mk2 import COLORS
 from ..incontrol_surface import ColorInControlSurface
 
 

@@ -11,14 +11,16 @@ more details.
 """
 
 from typing import Optional
+
 from control_surfaces.managers import (
     IAnnotationManager,
     IColorManager,
     IValueManager,
 )
-from ..event_patterns import BasicPattern, fromNibbles, ByteMatch
-from . import ControlSurface
-from ..value_strategies import Data2Strategy, Data1Strategy
+
+from ..event_patterns import BasicPattern, ByteMatch, fromNibbles
+from ..value_strategies import Data1Strategy, Data2Strategy
+from .control_surface import ControlSurface
 
 
 class AfterTouch(ControlSurface):

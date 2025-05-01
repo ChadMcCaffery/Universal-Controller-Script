@@ -9,7 +9,9 @@ Authors:
 """
 
 import random
+
 from fl_classes import FlMidiMsg
+
 from .event_pattern import IEventPattern
 
 

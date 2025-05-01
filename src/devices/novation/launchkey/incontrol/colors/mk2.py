@@ -12,7 +12,6 @@ more details.
 
 from common.types.color import Color
 
-
 COLORS = {
     #                 0xRRGGBB
     Color.fromInteger(0x000000):   0,  # Off

@@ -12,16 +12,16 @@ more details.
 """
 # from __future__ import annotations
 
-from typing import Optional, final
-from common.profiler import profilerDecoration, ProfilerContext
-from common.util.abstract_method_error import AbstractMethodError
-from control_surfaces.event_patterns import IEventPattern
-from fl_classes import FlMidiMsg
-from control_surfaces import ControlShadow
-
-from control_surfaces import ControlEvent
-from control_surfaces.matchers import IControlMatcher
 from abc import abstractmethod
+from typing import Optional, final
+
+from fl_classes import FlMidiMsg
+
+from common.profiler import ProfilerContext, profilerDecoration
+from common.util.abstract_method_error import AbstractMethodError
+from control_surfaces import ControlEvent, ControlShadow
+from control_surfaces.event_patterns import IEventPattern
+from control_surfaces.matchers import IControlMatcher
 
 
 class Device:

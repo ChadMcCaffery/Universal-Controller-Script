@@ -11,22 +11,22 @@ more details.
 """
 
 from typing import Any
-from consts import PARAM_CC_START
+
 from common.param import Param
 from common.plug_indexes import PluginIndex
-from control_surfaces.controls.pedal import (
-    Pedal,
-    SustainPedal,
-    SostenutoPedal,
-    SoftPedal,
-    SUSTAIN,
-    SOSTENUTO,
-    SOFT,
-)
+from consts import PARAM_CC_START
 from control_surfaces import ControlShadowEvent, ControlShadowList
+from control_surfaces.controls.pedal import (
+    SOFT,
+    SOSTENUTO,
+    SUSTAIN,
+    Pedal,
+    SoftPedal,
+    SostenutoPedal,
+    SustainPedal,
+)
 from devices import DeviceShadow
 from integrations.event_filters import toPluginIndex
-
 
 sustain = Param(PARAM_CC_START + SUSTAIN)
 sostenuto = Param(PARAM_CC_START + SOSTENUTO)

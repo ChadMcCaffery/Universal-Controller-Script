@@ -10,12 +10,14 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from typing import Optional
-from ..event_patterns import NullPattern
-from control_surfaces.value_strategies import NullStrategy
+
 from control_surfaces.managers import (
     IAnnotationManager,
     IColorManager,
 )
+from control_surfaces.value_strategies import NullStrategy
+
+from ..event_patterns import NullPattern
 from . import ControlSurface
 
 

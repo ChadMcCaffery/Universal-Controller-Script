@@ -20,8 +20,8 @@ __all__ = [
 ]
 
 from ..event_patterns import BasicPattern
-from . import ControlSurface
 from ..value_strategies import ButtonData2Strategy
+from . import ControlSurface
 
 
 class Pedal(ControlSurface):

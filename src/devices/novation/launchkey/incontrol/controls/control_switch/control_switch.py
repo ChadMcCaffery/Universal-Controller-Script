@@ -9,15 +9,16 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 
+from common.types import Color
+from control_surfaces import ControlSwitchButton
 from control_surfaces.event_patterns import (
     BasicPattern,
-    NotePattern,
+    ForwardedPattern,
     IEventPattern,
-    ForwardedPattern
+    NotePattern,
 )
-from common.types import Color
-from control_surfaces.value_strategies import NoteStrategy, ForwardedStrategy
-from control_surfaces import ControlSwitchButton
+from control_surfaces.value_strategies import ForwardedStrategy, NoteStrategy
+
 from ..incontrol_surface import ColorInControlSurface
 
 

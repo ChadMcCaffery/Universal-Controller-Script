@@ -12,25 +12,26 @@ more details.
 """
 
 from typing import TYPE_CHECKING, Any, Callable, Optional, Union
+
 from typing_extensions import TypeAlias
+
 from common.plug_indexes import FlIndex
-
-from common.util.dict_tools import lowestValueGrEqTarget, greatestKey
-from control_surfaces import ControlSurface
-from . import Device
-
+from common.util.dict_tools import greatestKey, lowestValueGrEqTarget
 from control_surfaces import (
-    IControlShadow,
-    ControlShadow,
-    NullControlShadow,
-    IControlHash,
     ControlEvent,
+    ControlShadow,
     ControlShadowEvent,
     ControlShadowList,
+    ControlSurface,
+    IControlHash,
+    IControlShadow,
+    NullControlShadow,
 )
 
+from . import Device
+
 if TYPE_CHECKING:
-    from collections.abc import Iterable, Generator
+    from collections.abc import Generator, Iterable
 
 # I'm so sorry about this horrendous piece of type hinting
 # There is no other way to do this that I've found
@@ -213,10 +214,7 @@ class DeviceShadow:
         type_matches: dict[type[ControlSurface], list[ControlShadow]] = {}
         num_type_matches: dict[type[ControlSurface], int] = {}
         for c in self._free_controls:
-            if one_type:
-                t = type(c.getControl())
-            else:
-                t = ControlSurface  # type: ignore
+            t = type(c.getControl()) if one_type else ControlSurface
             # If we want to assign this control
             if expr(c.getControl()):
                 num_type_matches[t] = \
@@ -310,7 +308,7 @@ class DeviceShadow:
         # Final all the matches for each type one by one
         for t in sub_types:
             matches = self._getMatches(
-                lambda x: isinstance(x, t),
+                lambda x: isinstance(x, t),  # noqa: B023
                 target_num,
                 one_type,
             )
@@ -496,11 +494,14 @@ class DeviceShadow:
                 ]
 
         # If it's a list of non-tuples
-        if isinstance(args_iter, list) and len(args_iter):
-            if not isinstance(args_iter[0], tuple):
-                # Convert it to a list of tuples
-                for i in range(len(args_iter)):
-                    args_iter[i] = (args_iter[i], )
+        if (
+            isinstance(args_iter, list)
+            and len(args_iter)
+            and not isinstance(args_iter[0], tuple)
+        ):
+            # Convert it to a list of tuples
+            for i in range(len(args_iter)):
+                args_iter[i] = (args_iter[i], )
 
         # Ensure all controls are assignable
         if not all(c in self._free_controls for c in controls):
@@ -555,9 +556,9 @@ class DeviceShadow:
                 allow_substitution,
                 target_num=1
             )[0]
-        except ValueError:
+        except ValueError as e:
             if raise_on_failure:
-                raise ValueError("No controls found to bind to")
+                raise ValueError("No controls found to bind to") from e
             else:
                 return NullControlShadow()
         self.bindControl(match, on_event, on_tick, args)
@@ -672,7 +673,7 @@ class DeviceShadow:
                 assert args_generator is not None
             # Turn the generator function into a generator (which is iterable)
             iterable: 'Iterable[tuple[Any, ...]] | ellipsis | None'\
-                = args_generator(matches)  # noqa: F821
+                = args_generator(matches)  # noqa: F821, UP037
         else:
             # Otherwise it's already iterable (or will be made so by the
             # bindControls() method)

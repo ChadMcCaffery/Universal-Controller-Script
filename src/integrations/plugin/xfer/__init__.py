@@ -13,8 +13,7 @@ more details.
 """
 
 from common.types import Color
-from integrations.plugin import basicPluginBuilder
-
+from integrations.plugin.basic_faders import basicPluginBuilder
 
 # Serum
 basicPluginBuilder(

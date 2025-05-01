@@ -14,18 +14,18 @@ more details.
 from typing import TYPE_CHECKING
 
 import device
+from fl_classes import FlMidiMsg, isMidiMsgStandard, isMidiMsgSysex
 
 import common
 from common.logger import log
-from fl_classes import FlMidiMsg
-from fl_classes import isMidiMsgStandard, isMidiMsgSysex
 from common.util.events import (
     decodeForwardedEvent,
     eventToString,
     forwardEvent,
     isEventForwarded,
-    isEventForwardedHereFrom
+    isEventForwardedHereFrom,
 )
+
 from .dev_state import DeviceState
 
 if TYPE_CHECKING:

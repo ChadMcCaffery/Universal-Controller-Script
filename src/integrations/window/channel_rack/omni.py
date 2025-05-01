@@ -11,15 +11,16 @@ more details.
 """
 
 from typing import Any
+
 import channels
-from common.plug_indexes import WindowIndex
+
+from common.plug_indexes import FlIndex, WindowIndex
 from common.types.color import Color
-from common.plug_indexes import FlIndex
-from control_surfaces import ControlShadowEvent
-from control_surfaces import DrumPad
+from control_surfaces import ControlShadowEvent, DrumPad
 from devices import DeviceShadow
-from integrations import WindowIntegration
-from .helpers import coordToIndex, INDEX
+from integrations.integration import WindowIntegration
+
+from .helpers import INDEX, coordToIndex
 
 
 class OmniPreview(WindowIntegration):

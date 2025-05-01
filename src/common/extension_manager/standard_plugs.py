@@ -13,18 +13,18 @@ more details.
 from typing import TYPE_CHECKING, Optional
 
 if TYPE_CHECKING:
-    from integrations import PluginIntegration
     from devices import Device
+    from integrations import PluginIntegration
 
 
 class StandardPluginCollection:
     """Collection of standard plugins registered to the script
     """
     def __init__(self) -> None:
-        self.__mappings: dict[str, type['PluginIntegration']] = {}
-        self.__instantiated: dict[str, 'PluginIntegration'] = {}
-        self.__fallback: Optional[type['PluginIntegration']] = None
-        self.__fallback_inst: Optional['PluginIntegration'] = None
+        self.__mappings: dict[str, type[PluginIntegration]] = {}
+        self.__instantiated: dict[str, PluginIntegration] = {}
+        self.__fallback: Optional[type[PluginIntegration]] = None
+        self.__fallback_inst: Optional[PluginIntegration] = None
 
     def register(self, plug: type['PluginIntegration']) -> None:
         """
@@ -65,10 +65,10 @@ class StandardPluginCollection:
         """
         from devices.device_shadow import DeviceShadow
         # Plugin already instantiated
-        if id in self.__instantiated.keys():
+        if id in self.__instantiated:
             return self.__instantiated[id]
         # Plugin exists but isn't instantiated
-        elif id in self.__mappings.keys():
+        elif id in self.__mappings:
             self.__instantiated[id] \
                 = self.__mappings[id].create(DeviceShadow(device))
             return self.__instantiated[id]
@@ -100,7 +100,7 @@ class StandardPluginCollection:
     def __len__(self) -> int:
         return len(self.__mappings)
 
-    def _formatPlugin(cls, plug: Optional['PluginIntegration']) -> str:
+    def _formatPlugin(self, plug: Optional['PluginIntegration']) -> str:
         """
         Format info about a plugin instance
 
@@ -122,11 +122,11 @@ class StandardPluginCollection:
             return self._inspect_plug(plug)
 
     def _inspect_plug(self, plug: 'type[PluginIntegration]') -> str:
-        matches: list[tuple[str, Optional['PluginIntegration']]] = []
+        matches: list[tuple[str, Optional[PluginIntegration]]] = []
 
         for id, p in self.__mappings.items():
             if p == plug:
-                if id in self.__instantiated.keys():
+                if id in self.__instantiated:
                     matches.append((id, self.__instantiated[id]))
                 else:
                     matches.append((id, None))
@@ -146,9 +146,9 @@ class StandardPluginCollection:
             ])
 
     def _inspect_id(self, id: str) -> str:
-        if id in self.__instantiated.keys():
+        if id in self.__instantiated:
             return f"{id} associated with:\n\n{self.__instantiated[id]}"
-        elif id in self.__mappings.keys():
+        elif id in self.__mappings:
             return f"{id} associated with: {self.__mappings[id]} "\
                     "(not instantiated)"
         else:

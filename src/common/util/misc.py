@@ -46,7 +46,7 @@ def sizeof(obj, seen=None):
     seen.add(obj_id)
     if isinstance(obj, dict):
         size += sum([sizeof(v, seen) for v in obj.values()])
-        size += sum([sizeof(k, seen) for k in obj.keys()])
+        size += sum([sizeof(k, seen) for k in obj])
     elif hasattr(obj, '__dict__'):
         size += sizeof(obj.__dict__, seen)
     elif hasattr(obj, '__iter__') and not isinstance(

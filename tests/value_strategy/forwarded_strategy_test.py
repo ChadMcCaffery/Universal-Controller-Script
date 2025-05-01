@@ -7,9 +7,10 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
-from control_surfaces.value_strategies import ForwardedStrategy, Data2Strategy
 from fl_classes import FlMidiMsg
+
 from common.util.events import encodeForwardedEvent
+from control_surfaces.value_strategies import Data2Strategy, ForwardedStrategy
 from tests.helpers.devices import DummyDeviceBasic, DummyDeviceContext
 
 

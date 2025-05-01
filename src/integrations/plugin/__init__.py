@@ -19,7 +19,6 @@ __all__ = [
     'xfer',
 ]
 
-from .basic_faders import basicPluginBuilder
 from . import (
     default_integration,
     fl,
@@ -28,3 +27,4 @@ from . import (
     spitfire,
     xfer,
 )
+from .basic_faders import basicPluginBuilder

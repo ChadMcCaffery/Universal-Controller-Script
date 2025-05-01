@@ -10,15 +10,17 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from typing import Optional
+
 from control_surfaces.event_patterns import ByteMatch
 from control_surfaces.managers import (
     IAnnotationManager,
     IColorManager,
     IValueManager,
 )
+
 from ..event_patterns import NotePattern
-from . import ControlSurface
 from ..value_strategies import NoteStrategy
+from . import ControlSurface
 
 
 class Note(ControlSurface):

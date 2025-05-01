@@ -11,28 +11,28 @@ more details.
 """
 
 from typing import Optional
-from fl_classes import FlMidiMsg
-from control_surfaces.event_patterns import (
-    BasicPattern,
-    UnionPattern,
-    ForwardedUnionPattern,
-    NullPattern
-)
 
-from control_surfaces.value_strategies import (
-    IValueStrategy,
-    ForwardedUnionStrategy
-)
-from control_surfaces import consts
+from fl_classes import FlMidiMsg
+
 from control_surfaces import (
-    ControlSurface,
     ControlEvent,
+    ControlSurface,
+    MoveJogWheel,
     NullControl,
     StandardJogWheel,
-    MoveJogWheel
+    consts,
 )
-
+from control_surfaces.event_patterns import (
+    BasicPattern,
+    ForwardedUnionPattern,
+    NullPattern,
+    UnionPattern,
+)
 from control_surfaces.matchers import IControlMatcher
+from control_surfaces.value_strategies import (
+    ForwardedUnionStrategy,
+    IValueStrategy,
+)
 
 
 class JogValueStrategy(IValueStrategy):

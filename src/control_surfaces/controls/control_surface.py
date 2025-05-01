@@ -12,26 +12,28 @@ more details.
 """
 # from __future__ import annotations
 
-from fl_classes import FlMidiMsg
+from abc import abstractmethod
 from time import time
 from typing import Optional, final
-from abc import abstractmethod
-from common import getContext
-from common.util.abstract_method_error import AbstractMethodError
+
+from fl_classes import FlMidiMsg
+
 from common.types import Color
+from common.util.abstract_method_error import AbstractMethodError
 from control_surfaces.event_patterns import NullPattern
 from control_surfaces.value_strategies import NullStrategy
-from ..event_patterns import IEventPattern
-from ..value_strategies import IValueStrategy
+
 from ..control_mapping import ControlEvent, ControlMapping
+from ..event_patterns import IEventPattern
 from ..managers import (
-    IAnnotationManager,
-    IColorManager,
-    IValueManager,
     DummyAnnotationManager,
     DummyColorManager,
     DummyValueManager,
+    IAnnotationManager,
+    IColorManager,
+    IValueManager,
 )
+from ..value_strategies import IValueStrategy
 
 
 class ControlSurface:
@@ -193,6 +195,7 @@ class ControlSurface:
         ### Returns:
         * `Optional[ControlEvent]`: control mapping, if the event maps
         """
+        from common import getContext
         if self.__pattern.matchEvent(event):
             self.__value = self.__value_strategy.getValueFromEvent(
                 event, self.__value)

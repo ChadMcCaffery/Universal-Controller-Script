@@ -64,42 +64,32 @@ __all__ = [
     'LkDeviceSelect',
 ]
 
-from .incontrol_surface import ColorInControlSurface, GrayscaleInControlSurface
-from .transport import (
-    LkFastForwardButton,
-    LkRewindButton,
-    LkMk2LoopButton,
-    LkMk3LoopButton,
-    LkMk2StopButton,
-    LkMk3StopButton,
-    LkMk2PlayButton,
-    LkMk3PlayButton,
-    LkMk2RecordButton,
-    LkMk3RecordButton,
-    LkMk3CaptureMidiButton,
-    LkQuantizeButton,
-    LkUndoRedoButton,
+from .activity import LkDeviceSelect, LkPauseActive
+from .control_switch import (
+    LkMk2ControlSwitchButton,
+    LkMk3ControlSwitchButton,
 )
 from .drum_pad import (
+    LkDrumPadMatcher,
     LkMk2DrumPad,
     LkMk3DrumPad,
-    LkDrumPadMatcher,
+    LkMk3DrumPadActivity,
     LkMk3DrumPadMute,
     LkMk3DrumPadSolo,
-    LkMk3DrumPadActivity,
     LkMk3MiniDrumPadActivity,
 )
 from .faders import (
     LkMk2Fader,
-    LkMk2MasterFader,
     LkMk2FaderButton,
-    LkMk2MasterFaderButton,
     LkMk2FaderSet,
+    LkMk2MasterFader,
+    LkMk2MasterFaderButton,
     LkMk3Fader,
-    LkMk3MasterFader,
     LkMk3FaderButton,
     LkMk3FaderSet,
+    LkMk3MasterFader,
 )
+from .incontrol_surface import ColorInControlSurface, GrayscaleInControlSurface
 from .knob import (
     LkKnob,
     LkKnobSet,
@@ -108,23 +98,33 @@ from .metronome import (
     LkMk2MetronomeButton,
     LkMk3MetronomeButton,
 )
-from .control_switch import (
-    LkMk2ControlSwitchButton,
-    LkMk3ControlSwitchButton,
+from .mutes import (
+    StopSoloMuteButton,
 )
 from .navigation import (
     LkMk2DirectionNext,
     LkMk2DirectionPrevious,
+    MiniMk3DirectionDown,
+    MiniMk3DirectionUp,
+    Mk3DirectionDown,
+    Mk3DirectionDownSilenced,
     Mk3DirectionLeft,
     Mk3DirectionRight,
-    MiniMk3DirectionUp,
-    MiniMk3DirectionDown,
     Mk3DirectionUp,
-    Mk3DirectionDown,
     Mk3DirectionUpSilenced,
-    Mk3DirectionDownSilenced,
 )
-from .mutes import (
-    StopSoloMuteButton,
+from .transport import (
+    LkFastForwardButton,
+    LkMk2LoopButton,
+    LkMk2PlayButton,
+    LkMk2RecordButton,
+    LkMk2StopButton,
+    LkMk3CaptureMidiButton,
+    LkMk3LoopButton,
+    LkMk3PlayButton,
+    LkMk3RecordButton,
+    LkMk3StopButton,
+    LkQuantizeButton,
+    LkRewindButton,
+    LkUndoRedoButton,
 )
-from .activity import LkPauseActive, LkDeviceSelect

@@ -15,8 +15,7 @@ more details.
 
 import pytest
 
-from common.logger import log
-from common.logger import verbosity
+from common.logger import log, verbosity
 
 
 def test_log_too_verbose(capsys: pytest.CaptureFixture):

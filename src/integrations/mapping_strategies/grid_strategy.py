@@ -10,18 +10,17 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 import itertools
-from typing import Callable, Optional, Any
+from typing import Any, Callable, Optional
 
-from common.plug_indexes import FlIndex, WindowIndex, PluginIndex
-from devices import DeviceShadow
+from common.plug_indexes import FlIndex, PluginIndex, WindowIndex
 from common.types import Color
 from common.util.grid_mapper import GridCell, grid_map
-
 from control_surfaces import (
     ControlShadow,
-    DrumPad,
     ControlShadowEvent,
+    DrumPad,
 )
+from devices import DeviceShadow
 
 TriggerCallback = Callable[[ControlShadowEvent, FlIndex, GridCell], bool]
 ColorCallback = Callable[[ControlShadow, FlIndex, GridCell], Color]

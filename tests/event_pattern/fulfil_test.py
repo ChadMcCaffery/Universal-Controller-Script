@@ -11,16 +11,17 @@ more details.
 """
 import pytest
 from fl_classes import FlMidiMsg
-from tests.helpers.devices import DummyDeviceContext
+
 from control_surfaces.event_patterns import (
-    IEventPattern,
     BasicPattern,
     ForwardedPattern,
     ForwardedUnionPattern,
-    UnionPattern,
-    NullPattern,
+    IEventPattern,
     NotePattern,
+    NullPattern,
+    UnionPattern,
 )
+from tests.helpers.devices import DummyDeviceContext
 
 
 def test_basic():

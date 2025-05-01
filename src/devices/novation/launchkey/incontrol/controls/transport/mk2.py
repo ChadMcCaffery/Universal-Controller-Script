@@ -11,13 +11,13 @@ more details.
 """
 
 
-from control_surfaces.event_patterns import BasicPattern, ForwardedPattern
 from control_surfaces import (
     LoopButton,
-    StopButton,
     PlayButton,
     RecordButton,
+    StopButton,
 )
+from control_surfaces.event_patterns import BasicPattern, ForwardedPattern
 from control_surfaces.value_strategies import (
     ButtonData2Strategy,
     ForwardedStrategy,

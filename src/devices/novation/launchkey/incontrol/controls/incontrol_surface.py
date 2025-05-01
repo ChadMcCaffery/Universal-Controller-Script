@@ -10,11 +10,14 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from typing import Optional
-from common import profilerDecoration
+
 from fl_classes import FlMidiMsg
+
+from common.profiler import profilerDecoration
 from common.types import Color
 from common.util.events import forwardEvent
 from control_surfaces.managers import IColorManager
+
 from ..consts import REFRESH_INTERVAL
 
 __all__ = [

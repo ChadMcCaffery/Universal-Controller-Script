@@ -16,16 +16,16 @@ __all__ = [
     'EventCallback',
 ]
 
-from .device import Device
-from .device_shadow import DeviceShadow, EventCallback
-
 # Device manufacturers
 from . import (
     akai,
-    novation,
-    maudio,
     korg,
+    maudio,
+    novation,
 )
+from .device import Device
+from .device_shadow import DeviceShadow, EventCallback
+
 del (
     akai,
     novation,

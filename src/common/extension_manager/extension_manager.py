@@ -12,16 +12,17 @@ more details.
 """
 
 from typing import TYPE_CHECKING
+
 from common.util.console_helpers import printReturn
 
 if TYPE_CHECKING:
     from devices import Device
     from integrations import Integration
 
-from .standard_plugs import StandardPluginCollection
-from .special_plugs import SpecialPluginCollection
-from .window_plugs import WindowPluginCollection
 from .devices import DeviceCollection
+from .special_plugs import SpecialPluginCollection
+from .standard_plugs import StandardPluginCollection
+from .window_plugs import WindowPluginCollection
 
 
 class ExtensionManager:

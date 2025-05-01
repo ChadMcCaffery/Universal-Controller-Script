@@ -11,11 +11,9 @@ more details.
 """
 
 from typing import Any
-from common.plug_indexes.fl_index import FlIndex
-from common import getContext
 
-from control_surfaces import Note
-from control_surfaces import ControlShadowEvent
+from common.plug_indexes.fl_index import FlIndex
+from control_surfaces import ControlShadowEvent, Note
 from devices import DeviceShadow
 
 
@@ -45,6 +43,7 @@ class NoteStrategy:
         *args: Any,
         **kwargs: Any
     ) -> bool:
+        from common import getContext
         getContext().activity.getGenerator().track.triggerNote(
             control.getControl().coordinate[1],
             control.value,

@@ -26,10 +26,10 @@ __all__ = [
     'NotePattern',
 ]
 
-from .byte_match import ByteMatch, fromNibbles, fulfilByte
+from .byte_match import ByteMatch, fromNibbles, fulfilByte  # noqa: I001
 from .event_pattern import IEventPattern
-from .union_pattern import UnionPattern
 from .basic_pattern import BasicPattern
-from .forwarded_pattern import ForwardedPattern, ForwardedUnionPattern
-from .null_pattern import NullPattern, TruePattern
 from .note_pattern import NotePattern
+from .null_pattern import NullPattern, TruePattern
+from .union_pattern import UnionPattern
+from .forwarded_pattern import ForwardedPattern, ForwardedUnionPattern

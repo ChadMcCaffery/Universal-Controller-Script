@@ -20,5 +20,5 @@ __all__ = [
     'FalseS',
 ]
 
+from .bool_s import BoolS, FalseS, TrueS
 from .color import Color
-from .bool_s import BoolS, TrueS, FalseS

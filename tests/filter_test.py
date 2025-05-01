@@ -10,10 +10,10 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from common.plug_indexes import (
-    FlIndex,
-    WindowIndex,
-    GeneratorIndex,
     EffectIndex,
+    FlIndex,
+    GeneratorIndex,
+    WindowIndex,
 )
 from control_surfaces import ControlShadowEvent
 from integrations import event_filters
