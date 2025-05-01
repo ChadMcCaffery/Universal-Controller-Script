@@ -672,8 +672,8 @@ class DeviceShadow:
                 assert not isinstance(args_generator, ellipsis)  # noqa: F821
                 assert args_generator is not None
             # Turn the generator function into a generator (which is iterable)
-            iterable: Iterable[tuple[Any, ...]] | ellipsis | None\
-                = args_generator(matches)  # noqa: F821
+            iterable: 'Iterable[tuple[Any, ...]] | ellipsis | None'\
+                = args_generator(matches)  # noqa: F821, UP037
         else:
             # Otherwise it's already iterable (or will be made so by the
             # bindControls() method)
