@@ -14,7 +14,6 @@ from typing import Any, Optional
 import mixer
 import ui
 
-from common import getContext
 from common.extension_manager import ExtensionManager
 from common.plug_indexes import WindowIndex
 from common.tracks.mixer_track import MixerTrack
@@ -42,8 +41,8 @@ from control_surfaces import (
     consts,
 )
 from devices import DeviceShadow
-from integrations import WindowIntegration
 from integrations.event_filters import filterButtonLift
+from integrations.integration import WindowIntegration
 from integrations.mapping_strategies import MuteSoloStrategy
 
 INDEX = WindowIndex.MIXER
@@ -63,6 +62,7 @@ def snapVolume(value: float, control: ControlSurface) -> float:
     ### Returns:
     * `float`: snapped value
     """
+    from common import getContext
     if (
         getContext().settings.get("plugins.mixer.allow_extended_volume")
         or isinstance(control, Encoder)

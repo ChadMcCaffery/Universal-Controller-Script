@@ -15,7 +15,6 @@ from typing import Optional
 import device
 from fl_classes import FlMidiMsg
 
-from common import getContext
 from common.extension_manager import ExtensionManager
 from control_surfaces import (
     ArmButton,
@@ -59,7 +58,7 @@ from control_surfaces.value_strategies import (
     ForwardedUnionStrategy,
     NoteStrategy,
 )
-from devices import Device
+from devices.device import Device
 
 from .hammer_pitch import HammerPitchWheel
 from .jog_matcher import JogMatcher
@@ -74,6 +73,7 @@ class Hammer88Pro(Device):
     """
 
     def __init__(self) -> None:
+        from common import getContext
         matcher = BasicControlMatcher()
         # Null events
         matcher.addControl(NullControl(

@@ -12,7 +12,7 @@ more details.
 from common.extension_manager import ExtensionManager
 from common.plug_indexes.window import WindowIndex
 from devices import DeviceShadow
-from integrations import WindowIntegration
+from integrations.integration import WindowIntegration
 
 INDEX = WindowIndex.BROWSER
 

@@ -13,7 +13,7 @@ from fl_classes import FlMidiMsg, isMidiMsgStandard
 
 from common.util.misc import clamp
 
-from . import IValueStrategy
+from .value_strategy import IValueStrategy
 
 
 class TwosComplimentDeltaStrategy(IValueStrategy):

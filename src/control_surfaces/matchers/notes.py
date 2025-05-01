@@ -14,8 +14,8 @@ from typing import Optional
 
 from fl_classes import FlMidiMsg, isMidiMsgStandard
 
-from control_surfaces import ControlSurface, Note, NoteAfterTouch
 from control_surfaces.control_mapping import ControlEvent
+from control_surfaces.controls import ControlSurface, Note, NoteAfterTouch
 from control_surfaces.event_patterns import (
     BasicPattern,
     ByteMatch,

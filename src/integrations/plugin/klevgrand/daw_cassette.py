@@ -16,8 +16,8 @@ from common.types import Color
 from common.util.grid_mapper import GridCell
 from control_surfaces import ControlShadow, ControlShadowEvent
 from devices import DeviceShadow
-from integrations import PluginIntegration
 from integrations.event_filters import toEffectIndex as eEffectIndex
+from integrations.integration import PluginIntegration
 from integrations.mapping_strategies import GridStrategy, SimpleFaders
 from integrations.tick_filters import toEffectIndex as tEffectIndex
 

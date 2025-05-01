@@ -13,7 +13,7 @@ from typing import Optional
 
 from fl_classes import FlMidiMsg
 
-from common import profilerDecoration
+from common.profiler import profilerDecoration
 from common.types import Color
 from common.util.events import forwardEvent
 from control_surfaces.managers import IColorManager

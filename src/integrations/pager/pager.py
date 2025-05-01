@@ -14,8 +14,8 @@ from common.types import Color
 from control_surfaces import ControlEvent, ControlSwitchButton
 from control_surfaces.control_mapping import ControlShadowEvent
 from devices import DeviceShadow
-from integrations import Integration
 from integrations.event_filters.filters import filterButtonLift
+from integrations.integration import Integration
 
 
 class IntegrationPager:

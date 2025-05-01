@@ -13,8 +13,9 @@ from common.extension_manager import ExtensionManager
 from common.plug_indexes import WindowIndex
 from common.types import Color
 from devices import DeviceShadow
-from integrations import IntegrationPager, WindowIntegration
+from integrations.integration import WindowIntegration
 from integrations.mapping_strategies import MuteSoloStrategy
+from integrations.pager import IntegrationPager
 
 from .helpers import INDEX, getChannelRows
 from .omni import OmniPreview

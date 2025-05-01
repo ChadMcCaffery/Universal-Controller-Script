@@ -11,13 +11,14 @@ more details.
 """
 from typing import Any
 
-from common import ExtensionManager
+from common.extension_manager import ExtensionManager
 from common.param import Param
 from common.plug_indexes import GeneratorIndex
 from common.types import Color
 from control_surfaces import ControlShadow, ControlShadowEvent, PitchWheel
 from devices import DeviceShadow
-from integrations import PluginIntegration, event_filters, tick_filters
+from integrations import event_filters, tick_filters
+from integrations.integration import PluginIntegration
 from integrations.mapping_strategies import SimpleFaders
 
 MACRO_START = 211

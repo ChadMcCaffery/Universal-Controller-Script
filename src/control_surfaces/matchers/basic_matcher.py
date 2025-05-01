@@ -12,13 +12,14 @@ more details.
 """
 
 from collections.abc import Sequence
-from typing import Optional
+from typing import TYPE_CHECKING, Optional
 
 from fl_classes import FlMidiMsg
 
-from control_surfaces import ControlEvent, ControlSurface
+from .control_matcher import IControlMatcher
 
-from . import IControlMatcher
+if TYPE_CHECKING:
+    from control_surfaces import ControlEvent, ControlSurface
 
 
 class BasicControlMatcher(IControlMatcher):
@@ -34,14 +35,12 @@ class BasicControlMatcher(IControlMatcher):
 
     def __init__(self) -> None:
         self._priorities: set[int] = set()
-        self._controls: dict[int, list[ControlSurface]] = {}
+        self._controls: "dict[int, list[ControlSurface]]" = {}  # noqa: UP037
         self._groups: set[str] = set()
         self._sub_matchers: dict[int, list[IControlMatcher]] = {}
 
     def addControls(
-        self,
-        controls: Sequence[ControlSurface],
-        priority: int = 0
+        self, controls: "Sequence[ControlSurface]", priority: int = 0
     ) -> None:
         """
         Register and add a list of controls to the control matcher.
@@ -54,7 +53,7 @@ class BasicControlMatcher(IControlMatcher):
         for c in controls:
             self.addControl(c, priority)
 
-    def addControl(self, control: ControlSurface, priority: int = 0) -> None:
+    def addControl(self, control: "ControlSurface", priority: int = 0) -> None:
         """
         Register and add a control to the control matcher.
 
@@ -70,9 +69,7 @@ class BasicControlMatcher(IControlMatcher):
             self._controls[priority] = [control]
 
     def addSubMatcher(
-        self,
-        matcher: IControlMatcher,
-        priority: int = 0
+        self, matcher: IControlMatcher, priority: int = 0
     ) -> None:
         """
         Register a control matcher to work as a component of this control
@@ -92,7 +89,7 @@ class BasicControlMatcher(IControlMatcher):
             self._priorities.add(priority)
             self._sub_matchers[priority] = [matcher]
 
-    def matchEvent(self, event: FlMidiMsg) -> Optional[ControlEvent]:
+    def matchEvent(self, event: FlMidiMsg) -> "Optional[ControlEvent]":
         # Work through in order of priority
         for priority in reversed(sorted(self._priorities)):
             if priority in self._controls:
@@ -105,7 +102,9 @@ class BasicControlMatcher(IControlMatcher):
                         return m
         return None
 
-    def getControls(self, group: Optional[str] = None) -> list[ControlSurface]:
+    def getControls(
+        self, group: Optional[str] = None
+    ) -> "list[ControlSurface]":
         controls = []
         for p in self._controls:
             controls += self._controls[p]

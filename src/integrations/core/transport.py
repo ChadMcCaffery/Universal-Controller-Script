@@ -34,8 +34,8 @@ from control_surfaces import (
 )
 from control_surfaces.control_shadow import ControlShadow
 from devices import DeviceShadow
-from integrations import CoreIntegration
 from integrations.event_filters import filterButtonLift
+from integrations.integration import CoreIntegration
 
 # Constants
 FAST_FORWARDING = 1

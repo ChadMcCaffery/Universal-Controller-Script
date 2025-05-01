@@ -10,7 +10,7 @@ This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
 from common.types import Color
-from integrations.plugin import basicPluginBuilder
+from integrations.plugin.basic_faders import basicPluginBuilder
 
 PARAMS = [
     0,  # Tuning

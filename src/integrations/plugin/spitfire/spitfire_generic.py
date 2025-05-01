@@ -20,7 +20,8 @@ from common.types import Color
 from common.util.grid_mapper import GridCell
 from control_surfaces import ControlShadowEvent, Fader
 from devices import DeviceShadow
-from integrations import PluginIntegration, event_filters, tick_filters
+from integrations import event_filters, tick_filters
+from integrations.integration import PluginIntegration
 from integrations.mapping_strategies import GridStrategy
 
 # Params

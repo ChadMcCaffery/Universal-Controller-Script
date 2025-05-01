@@ -37,7 +37,7 @@ from control_surfaces.value_strategies import (
     ButtonData2Strategy,
     Data2Strategy,
 )
-from devices import Device
+from devices.device import Device
 
 
 class NanoKontrol(Device):

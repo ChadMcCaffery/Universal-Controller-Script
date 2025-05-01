@@ -30,7 +30,7 @@ from control_surfaces.matchers import (
     ShiftMatcher,
     ShiftView,
 )
-from devices import Device
+from devices.device import Device
 
 from .controls import (
     SlAmbientKeys,

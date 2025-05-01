@@ -11,7 +11,8 @@ more details.
 """
 
 from .. import consts
-from . import ControlSurface, NavigationControl
+from .control_surface import ControlSurface
+from .navigation import NavigationControl
 
 
 class JogWheel(NavigationControl):

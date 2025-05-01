@@ -23,7 +23,7 @@ from control_surfaces import (
 )
 from control_surfaces.event_patterns import BasicPattern
 from control_surfaces.matchers import BasicControlMatcher, NoteMatcher
-from devices import Device
+from devices.device import Device
 from devices.novation.launchkey.incontrol import (
     InControl,
     InControlMatcher,

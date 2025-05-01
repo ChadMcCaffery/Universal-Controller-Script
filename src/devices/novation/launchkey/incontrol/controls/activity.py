@@ -16,7 +16,7 @@ from control_surfaces.value_strategies import (
 )
 
 from ..colors.mk3 import COLORS
-from . import ColorInControlSurface
+from .incontrol_surface import ColorInControlSurface
 
 
 class LkPauseActive(PauseActiveButton):

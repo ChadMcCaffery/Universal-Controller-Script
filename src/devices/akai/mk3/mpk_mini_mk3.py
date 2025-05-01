@@ -27,7 +27,7 @@ from control_surfaces.event_patterns import (
 )
 from control_surfaces.matchers import BasicControlMatcher, NoteMatcher
 from control_surfaces.value_strategies import Data2Strategy
-from devices import Device
+from devices.device import Device
 
 PAD_NOTES = [
     48, 47, 45, 43,

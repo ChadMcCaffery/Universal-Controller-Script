@@ -16,7 +16,7 @@ from typing import Union
 from common.extension_manager import ExtensionManager
 from common.types import Color
 from devices import DeviceShadow
-from integrations import PluginIntegration
+from integrations.integration import PluginIntegration
 from integrations.mapping_strategies import (
     PresetNavigationStrategy,
     SimpleFaders,

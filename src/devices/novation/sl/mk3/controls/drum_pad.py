@@ -16,7 +16,7 @@ from control_surfaces.matchers import (
 )
 from control_surfaces.value_strategies import ForwardedStrategy, NoteStrategy
 
-from . import SlColorSurface
+from .sl_color_surface import SlColorSurface
 
 DRUM_NOTES = [
     [i + 0x60 for i in range(8)],

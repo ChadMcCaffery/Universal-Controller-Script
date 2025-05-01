@@ -13,7 +13,7 @@ more details.
 from abc import abstractmethod
 from typing import TYPE_CHECKING
 
-from . import IScriptState
+from .script_state import IScriptState
 
 if TYPE_CHECKING:
     from devices import Device

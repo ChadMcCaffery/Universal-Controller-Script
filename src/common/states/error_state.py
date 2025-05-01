@@ -13,7 +13,6 @@ import ui
 from fl_classes import FlMidiMsg
 
 import consts
-from common import log, verbosity
 from common.exceptions import (
     DeviceInitializeError,
     DeviceRecognizeError,
@@ -24,9 +23,10 @@ from common.exceptions import (
     InvalidConfigError,
     UcsError,
 )
+from common.logger import log, verbosity
 from common.util.events import eventToString
 
-from . import IScriptState
+from .script_state import IScriptState
 
 ERROR_MAPPINGS: dict[type[Exception], dict] = {
     DeviceRecognizeError: {

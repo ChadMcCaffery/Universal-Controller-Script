@@ -18,12 +18,14 @@ import device
 from fl_classes import FlMidiMsg, isMidiMsgSysex
 
 import common
-from common import log, verbosity
 from common.exceptions import DeviceRecognizeError
+from common.logger import log, verbosity
 from common.util.events import eventToString
 from consts import UNIVERSAL_DEVICE_ENQUIRY
 
-from . import DeviceState, ErrorState, IScriptState
+from .dev_state import DeviceState
+from .error_state import ErrorState
+from .script_state import IScriptState
 
 LOG_CAT = "bootstrap.device.type_detect"
 

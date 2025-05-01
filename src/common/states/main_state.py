@@ -16,8 +16,9 @@ from typing import TYPE_CHECKING
 from fl_classes import FlMidiMsg
 
 import common
-from common import ProfilerContext, log, profilerDecoration, verbosity
+from common.logger import log, verbosity
 from common.plug_indexes import PluginIndex, WindowIndex
+from common.profiler import ProfilerContext, profilerDecoration
 from common.util.events import eventToString
 
 from .dev_state import DeviceState

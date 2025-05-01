@@ -11,7 +11,7 @@ more details.
 """
 from fl_classes import FlMidiMsg
 
-from . import IValueStrategy
+from .value_strategy import IValueStrategy
 
 
 class ButtonSinglePressStrategy(IValueStrategy):

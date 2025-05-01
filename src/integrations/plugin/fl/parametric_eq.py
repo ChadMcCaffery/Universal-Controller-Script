@@ -15,7 +15,8 @@ from common.plug_indexes import GeneratorIndex
 from common.types import Color
 from control_surfaces import ControlShadowEvent, Encoder, Fader, Knob
 from devices import DeviceShadow
-from integrations import PluginIntegration, event_filters, tick_filters
+from integrations import event_filters, tick_filters
+from integrations.integration import PluginIntegration
 
 # Number of parameters in the parametric EQ
 NUM_PARAMS = 7

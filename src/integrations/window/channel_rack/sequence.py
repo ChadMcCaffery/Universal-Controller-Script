@@ -26,8 +26,8 @@ from control_surfaces import (
 )
 from control_surfaces.control_shadow import ControlShadow
 from devices import DeviceShadow
-from integrations import WindowIntegration
 from integrations.event_filters import filterButtonLift
+from integrations.integration import WindowIntegration
 from integrations.mapping_strategies.grid_strategy import GridStrategy
 
 from .helpers import INDEX, getChannelRows

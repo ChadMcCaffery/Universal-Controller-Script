@@ -18,7 +18,6 @@ import playlist
 import transport
 import ui
 
-from common import getContext
 from common.extension_manager import ExtensionManager
 from common.plug_indexes import FlIndex, WindowIndex
 from common.tracks import PlaylistTrack
@@ -39,8 +38,8 @@ from control_surfaces import (
     consts,
 )
 from devices import DeviceShadow
-from integrations import WindowIntegration
 from integrations.event_filters import filterButtonLift
+from integrations.integration import WindowIntegration
 from integrations.mapping_strategies import MuteSoloStrategy
 
 # Thanks, https://stackoverflow.com/a/8081580/6335363
@@ -63,6 +62,7 @@ TOOL_COLORS, TOOL_NAMES = cast(
 def getNumDrumCols() -> int:
     """Returns the number of columns that the are supported by the controller
     """
+    from common import getContext
     return getContext().getDevice().getDrumPadSize()[1]
 
 

@@ -18,7 +18,6 @@ from typing import Optional, final
 
 from fl_classes import FlMidiMsg
 
-from common import getContext
 from common.types import Color
 from common.util.abstract_method_error import AbstractMethodError
 from control_surfaces.event_patterns import NullPattern
@@ -196,6 +195,7 @@ class ControlSurface:
         ### Returns:
         * `Optional[ControlEvent]`: control mapping, if the event maps
         """
+        from common import getContext
         if self.__pattern.matchEvent(event):
             self.__value = self.__value_strategy.getValueFromEvent(
                 event, self.__value)

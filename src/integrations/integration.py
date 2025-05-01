@@ -14,7 +14,7 @@ more details.
 from abc import abstractmethod
 from typing import final
 
-from common import log, verbosity
+from common.logger import log, verbosity
 from common.plug_indexes import FlIndex, WindowIndex
 from common.util.abstract_method_error import AbstractMethodError
 from control_surfaces import ControlEvent

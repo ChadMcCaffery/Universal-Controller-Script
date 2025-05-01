@@ -18,7 +18,7 @@ from common.plug_indexes import FlIndex, WindowIndex
 from common.types.color import Color
 from control_surfaces import ControlShadowEvent, DrumPad
 from devices import DeviceShadow
-from integrations import WindowIntegration
+from integrations.integration import WindowIntegration
 
 from .helpers import INDEX, coordToIndex
 

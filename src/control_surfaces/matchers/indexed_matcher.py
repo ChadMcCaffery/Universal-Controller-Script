@@ -16,7 +16,8 @@ from typing import Optional
 from fl_classes import FlMidiMsg, isMidiMsgStandard
 
 from common.util.events import decodeForwardedEvent
-from control_surfaces import ControlEvent, ControlSurface
+from control_surfaces.control_mapping import ControlEvent
+from control_surfaces.controls import ControlSurface
 from control_surfaces.event_patterns import (
     BasicPattern,
     ForwardedPattern,

@@ -20,7 +20,7 @@ from control_surfaces.managers import (
 
 from ..event_patterns import BasicPattern, ByteMatch, fromNibbles
 from ..value_strategies import Data1Strategy, Data2Strategy
-from . import ControlSurface
+from .control_surface import ControlSurface
 
 
 class AfterTouch(ControlSurface):

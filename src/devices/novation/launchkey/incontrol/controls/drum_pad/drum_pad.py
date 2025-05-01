@@ -27,7 +27,7 @@ from control_surfaces.matchers import (
 from control_surfaces.value_strategies import ForwardedStrategy, NoteStrategy
 
 from ...consts import DRUM_COLS, DRUM_ROWS
-from .. import ColorInControlSurface
+from ..incontrol_surface import ColorInControlSurface
 
 
 class ILkDrumPad(ControlSurface):  # pragma: no cover

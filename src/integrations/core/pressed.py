@@ -29,7 +29,7 @@ from control_surfaces import (
     PitchWheel,
 )
 from devices import DeviceShadow
-from integrations import CoreIntegration
+from integrations.integration import CoreIntegration
 
 # How much time to fade buttons to black
 FADE_TIME = 1.0

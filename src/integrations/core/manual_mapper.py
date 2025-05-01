@@ -30,7 +30,7 @@ from control_surfaces import (
     ModXY,
 )
 from devices import DeviceShadow
-from integrations import CoreIntegration
+from integrations.integration import CoreIntegration
 
 # Only assign to CC values that are undefined by the MIDI spec
 AVAILABLE_CCS = (

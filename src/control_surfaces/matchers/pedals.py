@@ -9,7 +9,11 @@ Authors:
 This code is licensed under the GPL v3 license. Refer to the LICENSE file for
 more details.
 """
-from control_surfaces import SoftPedal, SostenutoPedal, SustainPedal
+from control_surfaces.controls.pedal import (
+    SoftPedal,
+    SostenutoPedal,
+    SustainPedal,
+)
 from control_surfaces.matchers import BasicControlMatcher
 
 

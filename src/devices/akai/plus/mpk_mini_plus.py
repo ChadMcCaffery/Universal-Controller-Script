@@ -46,7 +46,7 @@ from control_surfaces.value_strategies import (
     Data2Strategy,
     TwosComplimentDeltaStrategy,
 )
-from devices import Device
+from devices.device import Device
 
 PAD_NOTES = [
     48, 47, 45, 43,

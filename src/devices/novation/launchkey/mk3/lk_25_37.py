@@ -27,7 +27,7 @@ from control_surfaces.matchers import (
     NoteAfterTouchMatcher,
     NoteMatcher,
 )
-from devices import Device
+from devices.device import Device
 from devices.novation.launchkey.incontrol import (
     InControl,
     InControlMatcher,

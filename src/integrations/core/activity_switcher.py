@@ -16,7 +16,6 @@ more details.
 """
 import contextlib
 
-from common import getContext
 from common.extension_manager import ExtensionManager
 from common.plug_indexes import (
     FlIndex,
@@ -31,8 +30,8 @@ from control_surfaces import (
     ControlShadowEvent,
 )
 from devices import DeviceShadow
-from integrations import CoreIntegration
 from integrations.event_filters import filterButtonLift
+from integrations.integration import CoreIntegration
 
 
 def getActivityColor(activity: FlIndex) -> Color:
@@ -82,6 +81,7 @@ class ActivitySwitcher(CoreIntegration):
         _,
         c_index: int,
     ) -> bool:
+        from common import getContext
         with contextlib.suppress(IndexError):
             getContext().activity.getHistoryActivity(c_index).focus()
         return True
@@ -92,6 +92,7 @@ class ActivitySwitcher(CoreIntegration):
         _,
         c_index: int,
     ):
+        from common import getContext
         try:
             activity = getContext().activity.getHistoryActivity(c_index)
             control.color = getActivityColor(activity)

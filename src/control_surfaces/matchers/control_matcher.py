@@ -17,7 +17,8 @@ from typing import Optional
 from fl_classes import FlMidiMsg
 
 from common.util.abstract_method_error import AbstractMethodError
-from control_surfaces import ControlEvent, ControlSurface
+from control_surfaces.control_mapping import ControlEvent
+from control_surfaces.controls import ControlSurface
 
 
 class IControlMatcher:
