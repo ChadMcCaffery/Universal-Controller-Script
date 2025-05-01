@@ -38,7 +38,7 @@ jestspectation = "^1.4.5"
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.8.0"
 flake8 = "^7.1.1"
-isort = "^6.0.0"
+isort = "^6.0.1"
 mypy = "^1.15.0"
 pytest = "^8.3.4"
 autopep8 = "^2.3.2"
